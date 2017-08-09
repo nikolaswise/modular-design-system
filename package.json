@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rollup -c --environment dev",
     "dev": "live-server public --entry-file=200.html & rollup -c -w & npm run css",
-    "css": "postcss css/global.css --output public/global.css --watch",
+    "precss": "node-sass css/global.scss -o public/ --include-path=node_modules",
+    "css": "node-sass css/*.scss -o public/ --include-path=node_modules --watch",
     "stage": "surge public/ --domain modular-design-system.nikolas.ws",
     "start": "npm run dev"
   },
