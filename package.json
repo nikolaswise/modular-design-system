@@ -4,7 +4,11 @@
   "description": "A modular design system for web, informed by the analog",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "rollup -c --environment dev",
+    "dev": "live-server public --entry-file=200.html & rollup -c -w & npm run css",
+    "css": "postcss css/global.css --output public/global.css --watch",
+    "stage": "surge public/ --domain modular-design-system.nikolas.ws",
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
@@ -20,5 +24,37 @@
   "bugs": {
     "url": "https://github.com/nikolaswise/modular-design-system/issues"
   },
-  "homepage": "https://github.com/nikolaswise/modular-design-system#readme"
+  "homepage": "https://github.com/nikolaswise/modular-design-system#readme",
+  "devDependencies": {
+    "abstract-state-router": "^5.16.2",
+    "clean-css": "^4.1.7",
+    "live-server": "^1.2.0",
+    "modular-aria": "github:nikolaswise/modular-aria",
+    "modular-bus": "github:nikolaswise/modular-bus",
+    "modular-class": "github:nikolaswise/modular-class",
+    "modular-color": "github:nikolaswise/modular-color",
+    "modular-configuration": "github:nikolaswise/modular-configuration",
+    "modular-dom": "github:nikolaswise/modular-dom",
+    "modular-drawers": "github:nikolaswise/modular-drawers",
+    "modular-event": "github:nikolaswise/modular-event",
+    "modular-flex-grid": "github:nikolaswise/modular-flex-grid",
+    "modular-media-queries": "github:nikolaswise/modular-media-queries",
+    "modular-modal": "github:nikolaswise/modular-modal",
+    "modular-request": "github:nikolaswise/modular-request",
+    "modular-tables": "github:nikolaswise/modular-tables",
+    "modular-tabs": "github:nikolaswise/modular-tabs",
+    "modular-type": "github:nikolaswise/modular-type",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.0",
+    "postcss-import": "^10.0.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-svelte": "^2.0.3",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^3.2.2",
+    "route-parser": "0.0.5",
+    "svelte-state-renderer": "^1.2.2"
+  }
 }

@@ -1,0 +1,38 @@
+<div id="view"></div>
+
+<script>
+// Services
+import createRouter from './services/createRouter';
+
+// Components
+import Home from './components/Home.html';
+import NotFound from './components/404.html';
+
+const router = createRouter({
+  '/': Home,
+  '/404': NotFound
+});
+
+console.log(router)
+
+export default {
+  oncreate() {
+    router.start(window.location, window.document.querySelector('#view'));
+  },
+
+  ondestroy() {
+    router.teardown();
+  },
+
+  data () {
+    return {
+      dynamic: 'dynamic data'
+    }
+  },
+
+  components: {
+    Home,
+    NotFound
+  }
+}
+</script>
