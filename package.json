@@ -1,0 +1,24 @@
+{
+  "name": "modular-design-system",
+  "version": "1.0.0",
+  "description": "A modular design system for web, informed by the analog",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolaswise/modular-design-system.git"
+  },
+  "keywords": [
+    "design",
+    "css",
+    "js"
+  ],
+  "author": "Nikolas Wise",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikolaswise/modular-design-system/issues"
+  },
+  "homepage": "https://github.com/nikolaswise/modular-design-system#readme"
+}
