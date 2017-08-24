@@ -9,17 +9,17 @@
     <div class="col">
       <h5>Overview</h5>
       <ul>
-        <li><a href="/introduction">Introduction</a></li>
-        <li><a href="/design-systems">What is a Design System?</a></li>
-        <li><a href="/usage">Getting Started</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#design-systems">What is a Design System?</a></li>
+        <li><a href="#usage">Getting Started</a></li>
       </ul>
     </div>
     <div class="col lead-2">
       <h5>Underlying Structures</h5>
       <ul>
-        <li><a href="/grid">Reset</a></li>
-        <li><a href="/grid">Configuration</a></li>
-        <li><a href="/grid">Media Queries</a></li>
+        <!-- <li><a href="/reset">Reset</a></li> -->
+        <li><a href="/configuration">Configuration</a></li>
+        <li><a href="/media-queries">Media Queries</a></li>
         <li><a href="/grid">Flex Grid</a></li>
         <li><a href="/type">Typographic Structure</a></li>
       </ul>
@@ -48,3 +48,20 @@
     </div>
   </div>
 </div>
+
+<Introduction />
+<Systems />
+<Usage />
+
+<script>
+  import Introduction from './00-Introduction.html';
+  import Systems from './01-Design-Systems.html';
+  import Usage from './02-Getting-Started.html';
+  export default {
+    components: {
+      Introduction,
+      Systems,
+      Usage
+    }
+  }
+</script>

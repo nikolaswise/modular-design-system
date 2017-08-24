@@ -1131,8 +1131,274 @@ var proto = {
 	teardown: destroy
 };
 
+function create_main_fragment$2 ( state, component ) {
+	var div, div_1, article, header, h1, text, text_1, blockquote, text_2, text_4, section, p, text_5;
+
+	return {
+		create: function () {
+			div = createElement( 'div' );
+			div_1 = createElement( 'div' );
+			article = createElement( 'article' );
+			header = createElement( 'header' );
+			h1 = createElement( 'h1' );
+			text = createText( "Introduction" );
+			text_1 = createText( "\n        " );
+			blockquote = createElement( 'blockquote' );
+			text_2 = createText( "What this even is tho?" );
+			text_4 = createText( "\n      " );
+			section = createElement( 'section' );
+			p = createElement( 'p' );
+			text_5 = createText( "Gonna be dope" );
+			this.hydrate();
+		},
+
+		hydrate: function ( nodes ) {
+			div.className = "container";
+			div_1.className = "row";
+			article.className = "col";
+			article.id = "introduction";
+			h1.className = "lead-4";
+		},
+
+		mount: function ( target, anchor ) {
+			insertNode( div, target, anchor );
+			appendNode( div_1, div );
+			appendNode( article, div_1 );
+			appendNode( header, article );
+			appendNode( h1, header );
+			appendNode( text, h1 );
+			appendNode( text_1, header );
+			appendNode( blockquote, header );
+			appendNode( text_2, blockquote );
+			appendNode( text_4, article );
+			appendNode( section, article );
+			appendNode( p, section );
+			appendNode( text_5, p );
+		},
+
+		unmount: function () {
+			detachNode( div );
+		},
+
+		destroy: noop
+	};
+}
+
+function _00_Introduction ( options ) {
+	options = options || {};
+	this._state = options.data || {};
+
+	this._observers = {
+		pre: Object.create( null ),
+		post: Object.create( null )
+	};
+
+	this._handlers = Object.create( null );
+
+	this._root = options._root || this;
+	this._yield = options._yield;
+
+	this._fragment = create_main_fragment$2( this._state, this );
+
+	if ( options.target ) {
+		this._fragment.create();
+		this._fragment.mount( options.target, null );
+	}
+}
+
+assign( _00_Introduction.prototype, proto );
+
+_00_Introduction.prototype._set = function _set ( newState ) {
+	var oldState = this._state;
+	this._state = assign( {}, oldState, newState );
+	dispatchObservers( this, this._observers.pre, newState, oldState );
+	dispatchObservers( this, this._observers.post, newState, oldState );
+};
+
+function create_main_fragment$3 ( state, component ) {
+	var div, div_1, article, header, h1, text, text_1, blockquote, text_2, text_4, section, p, text_5;
+
+	return {
+		create: function () {
+			div = createElement( 'div' );
+			div_1 = createElement( 'div' );
+			article = createElement( 'article' );
+			header = createElement( 'header' );
+			h1 = createElement( 'h1' );
+			text = createText( "What is a Design System?" );
+			text_1 = createText( "\n        " );
+			blockquote = createElement( 'blockquote' );
+			text_2 = createText( "Something inspiring here." );
+			text_4 = createText( "\n      " );
+			section = createElement( 'section' );
+			p = createElement( 'p' );
+			text_5 = createText( "Useful shit; a way of thinking" );
+			this.hydrate();
+		},
+
+		hydrate: function ( nodes ) {
+			div.className = "container";
+			div_1.className = "row";
+			article.className = "col";
+			article.id = "design-systems";
+			h1.className = "lead-4";
+		},
+
+		mount: function ( target, anchor ) {
+			insertNode( div, target, anchor );
+			appendNode( div_1, div );
+			appendNode( article, div_1 );
+			appendNode( header, article );
+			appendNode( h1, header );
+			appendNode( text, h1 );
+			appendNode( text_1, header );
+			appendNode( blockquote, header );
+			appendNode( text_2, blockquote );
+			appendNode( text_4, article );
+			appendNode( section, article );
+			appendNode( p, section );
+			appendNode( text_5, p );
+		},
+
+		unmount: function () {
+			detachNode( div );
+		},
+
+		destroy: noop
+	};
+}
+
+function _01_Design_Systems ( options ) {
+	options = options || {};
+	this._state = options.data || {};
+
+	this._observers = {
+		pre: Object.create( null ),
+		post: Object.create( null )
+	};
+
+	this._handlers = Object.create( null );
+
+	this._root = options._root || this;
+	this._yield = options._yield;
+
+	this._fragment = create_main_fragment$3( this._state, this );
+
+	if ( options.target ) {
+		this._fragment.create();
+		this._fragment.mount( options.target, null );
+	}
+}
+
+assign( _01_Design_Systems.prototype, proto );
+
+_01_Design_Systems.prototype._set = function _set ( newState ) {
+	var oldState = this._state;
+	this._state = assign( {}, oldState, newState );
+	dispatchObservers( this, this._observers.pre, newState, oldState );
+	dispatchObservers( this, this._observers.post, newState, oldState );
+};
+
+function create_main_fragment$4 ( state, component ) {
+	var div, div_1, article, header, h1, text, text_1, pre, code, text_2, text_4, section, p, text_5;
+
+	return {
+		create: function () {
+			div = createElement( 'div' );
+			div_1 = createElement( 'div' );
+			article = createElement( 'article' );
+			header = createElement( 'header' );
+			h1 = createElement( 'h1' );
+			text = createText( "Getting Started" );
+			text_1 = createText( "\n        " );
+			pre = createElement( 'pre' );
+			code = createElement( 'code' );
+			text_2 = createText( "$ npm install" );
+			text_4 = createText( "\n      " );
+			section = createElement( 'section' );
+			p = createElement( 'p' );
+			text_5 = createText( "How this lego shit works even" );
+			this.hydrate();
+		},
+
+		hydrate: function ( nodes ) {
+			div.className = "container";
+			div_1.className = "row";
+			article.className = "col";
+			article.id = "usage";
+			h1.className = "lead-4";
+		},
+
+		mount: function ( target, anchor ) {
+			insertNode( div, target, anchor );
+			appendNode( div_1, div );
+			appendNode( article, div_1 );
+			appendNode( header, article );
+			appendNode( h1, header );
+			appendNode( text, h1 );
+			appendNode( text_1, header );
+			appendNode( pre, header );
+			appendNode( code, pre );
+			appendNode( text_2, code );
+			appendNode( text_4, article );
+			appendNode( section, article );
+			appendNode( p, section );
+			appendNode( text_5, p );
+		},
+
+		unmount: function () {
+			detachNode( div );
+		},
+
+		destroy: noop
+	};
+}
+
+function _02_Getting_Started ( options ) {
+	options = options || {};
+	this._state = options.data || {};
+
+	this._observers = {
+		pre: Object.create( null ),
+		post: Object.create( null )
+	};
+
+	this._handlers = Object.create( null );
+
+	this._root = options._root || this;
+	this._yield = options._yield;
+
+	this._fragment = create_main_fragment$4( this._state, this );
+
+	if ( options.target ) {
+		this._fragment.create();
+		this._fragment.mount( options.target, null );
+	}
+}
+
+assign( _02_Getting_Started.prototype, proto );
+
+_02_Getting_Started.prototype._set = function _set ( newState ) {
+	var oldState = this._state;
+	this._state = assign( {}, oldState, newState );
+	dispatchObservers( this, this._observers.pre, newState, oldState );
+	dispatchObservers( this, this._observers.post, newState, oldState );
+};
+
 function create_main_fragment$1 ( state, component ) {
-	var div, div_1, div_2, h1, text, text_1, blockquote, text_2, text_5, div_3, div_4, h5, text_6, text_7, ul, li, a, text_8, li_1, a_1, text_9, li_2, a_2, text_10, text_12, div_5, h5_1, text_13, text_14, ul_1, li_3, a_3, text_15, li_4, a_4, text_16, li_5, a_5, text_17, li_6, a_6, text_18, li_7, a_7, text_19, text_20, h5_2, text_21, text_22, ul_2, li_8, a_8, text_23, li_9, a_9, text_24, li_10, a_10, text_25, li_11, a_11, text_26, li_12, a_12, text_27, li_13, a_13, text_28, text_30, div_6, h5_3, text_31, text_32, ul_3, li_14, a_14, text_33, li_15, a_15, text_34, li_16, a_16, text_35, li_17, a_17, text_36, li_18, a_18, text_37, li_19, a_19, text_38, li_20, a_20, text_39, li_21, a_21, text_40;
+	var div, div_1, div_2, h1, text, text_1, blockquote, text_2, text_5, div_3, div_4, h5, text_6, text_7, ul, li, a, text_8, li_1, a_1, text_9, li_2, a_2, text_10, text_12, div_5, h5_1, text_13, text_14, ul_1, li_3, a_3, text_15, li_4, a_4, text_16, li_5, a_5, text_17, li_6, a_6, text_18, text_19, h5_2, text_20, text_21, ul_2, li_7, a_7, text_22, li_8, a_8, text_23, li_9, a_9, text_24, li_10, a_10, text_25, li_11, a_11, text_26, li_12, a_12, text_27, text_29, div_6, h5_3, text_30, text_31, ul_3, li_13, a_13, text_32, li_14, a_14, text_33, li_15, a_15, text_34, li_16, a_16, text_35, li_17, a_17, text_36, li_18, a_18, text_37, li_19, a_19, text_38, li_20, a_20, text_39, text_43, text_44, text_45;
+
+	var introduction = new _00_Introduction({
+		_root: component._root
+	});
+
+	var systems = new _01_Design_Systems({
+		_root: component._root
+	});
+
+	var usage = new _02_Getting_Started({
+		_root: component._root
+	});
 
 	return {
 		create: function () {
@@ -1168,72 +1434,75 @@ function create_main_fragment$1 ( state, component ) {
 			ul_1 = createElement( 'ul' );
 			li_3 = createElement( 'li' );
 			a_3 = createElement( 'a' );
-			text_15 = createText( "Reset" );
+			text_15 = createText( "Configuration" );
 			li_4 = createElement( 'li' );
 			a_4 = createElement( 'a' );
-			text_16 = createText( "Configuration" );
+			text_16 = createText( "Media Queries" );
 			li_5 = createElement( 'li' );
 			a_5 = createElement( 'a' );
-			text_17 = createText( "Media Queries" );
+			text_17 = createText( "Flex Grid" );
 			li_6 = createElement( 'li' );
 			a_6 = createElement( 'a' );
-			text_18 = createText( "Flex Grid" );
+			text_18 = createText( "Typographic Structure" );
+			text_19 = createText( "\n      " );
+			h5_2 = createElement( 'h5' );
+			text_20 = createText( "JavaScript" );
+			text_21 = createText( "\n      " );
+			ul_2 = createElement( 'ul' );
 			li_7 = createElement( 'li' );
 			a_7 = createElement( 'a' );
-			text_19 = createText( "Typographic Structure" );
-			text_20 = createText( "\n      " );
-			h5_2 = createElement( 'h5' );
-			text_21 = createText( "JavaScript" );
-			text_22 = createText( "\n      " );
-			ul_2 = createElement( 'ul' );
+			text_22 = createText( "Not A Framework" );
 			li_8 = createElement( 'li' );
 			a_8 = createElement( 'a' );
-			text_23 = createText( "Not A Framework" );
+			text_23 = createText( "Pub/Sub Bus" );
 			li_9 = createElement( 'li' );
 			a_9 = createElement( 'a' );
-			text_24 = createText( "Pub/Sub Bus" );
+			text_24 = createText( "Aria" );
 			li_10 = createElement( 'li' );
 			a_10 = createElement( 'a' );
-			text_25 = createText( "Aria" );
+			text_25 = createText( "Events" );
 			li_11 = createElement( 'li' );
 			a_11 = createElement( 'a' );
-			text_26 = createText( "Events" );
+			text_26 = createText( "Class" );
 			li_12 = createElement( 'li' );
 			a_12 = createElement( 'a' );
-			text_27 = createText( "Class" );
-			li_13 = createElement( 'li' );
-			a_13 = createElement( 'a' );
-			text_28 = createText( "DOM" );
-			text_30 = createText( "\n    " );
+			text_27 = createText( "DOM" );
+			text_29 = createText( "\n    " );
 			div_6 = createElement( 'div' );
 			h5_3 = createElement( 'h5' );
-			text_31 = createText( "Design Patterns" );
-			text_32 = createText( "\n      " );
+			text_30 = createText( "Design Patterns" );
+			text_31 = createText( "\n      " );
 			ul_3 = createElement( 'ul' );
+			li_13 = createElement( 'li' );
+			a_13 = createElement( 'a' );
+			text_32 = createText( "Forms" );
 			li_14 = createElement( 'li' );
 			a_14 = createElement( 'a' );
-			text_33 = createText( "Forms" );
+			text_33 = createText( "Buttons" );
 			li_15 = createElement( 'li' );
 			a_15 = createElement( 'a' );
-			text_34 = createText( "Buttons" );
+			text_34 = createText( "Tables" );
 			li_16 = createElement( 'li' );
 			a_16 = createElement( 'a' );
-			text_35 = createText( "Tables" );
+			text_35 = createText( "Tooltips" );
 			li_17 = createElement( 'li' );
 			a_17 = createElement( 'a' );
-			text_36 = createText( "Tooltips" );
+			text_36 = createText( "Modals" );
 			li_18 = createElement( 'li' );
 			a_18 = createElement( 'a' );
-			text_37 = createText( "Modals" );
+			text_37 = createText( "Tabs" );
 			li_19 = createElement( 'li' );
 			a_19 = createElement( 'a' );
-			text_38 = createText( "Tabs" );
+			text_38 = createText( "Dropdowns" );
 			li_20 = createElement( 'li' );
 			a_20 = createElement( 'a' );
-			text_39 = createText( "Dropdowns" );
-			li_21 = createElement( 'li' );
-			a_21 = createElement( 'a' );
-			text_40 = createText( "Drawers" );
+			text_39 = createText( "Drawers" );
+			text_43 = createText( "\n\n" );
+			introduction._fragment.create();
+			text_44 = createText( "\n" );
+			systems._fragment.create();
+			text_45 = createText( "\n" );
+			usage._fragment.create();
 			this.hydrate();
 		},
 
@@ -1244,31 +1513,30 @@ function create_main_fragment$1 ( state, component ) {
 			h1.className = "lead-4";
 			div_3.className = "row";
 			div_4.className = "col";
-			a.href = "/introduction";
-			a_1.href = "/design-systems";
-			a_2.href = "/usage";
+			a.href = "#introduction";
+			a_1.href = "#design-systems";
+			a_2.href = "#usage";
 			div_5.className = "col lead-2";
-			a_3.href = "/grid";
-			a_4.href = "/grid";
+			a_3.href = "/configuration";
+			a_4.href = "/media-queries";
 			a_5.href = "/grid";
-			a_6.href = "/grid";
-			a_7.href = "/type";
+			a_6.href = "/type";
 			h5_2.className = "lead-4";
-			a_8.href = "/not-a-framework";
-			a_9.href = "/bus";
-			a_10.href = "/aria";
-			a_11.href = "/events";
-			a_12.href = "/class";
-			a_13.href = "/dom";
+			a_7.href = "/not-a-framework";
+			a_8.href = "/bus";
+			a_9.href = "/aria";
+			a_10.href = "/events";
+			a_11.href = "/class";
+			a_12.href = "/dom";
 			div_6.className = "col lead-4";
-			a_14.href = "/forms";
-			a_15.href = "/buttons";
-			a_16.href = "/tables";
-			a_17.href = "/tooltips";
-			a_18.href = "/modals";
-			a_19.href = "/tabs";
-			a_20.href = "/dropdowns";
-			a_21.href = "/drawers";
+			a_13.href = "/forms";
+			a_14.href = "/buttons";
+			a_15.href = "/tables";
+			a_16.href = "/tooltips";
+			a_17.href = "/modals";
+			a_18.href = "/tabs";
+			a_19.href = "/dropdowns";
+			a_20.href = "/drawers";
 		},
 
 		mount: function ( target, anchor ) {
@@ -1314,14 +1582,14 @@ function create_main_fragment$1 ( state, component ) {
 			appendNode( li_6, ul_1 );
 			appendNode( a_6, li_6 );
 			appendNode( text_18, a_6 );
-			appendNode( li_7, ul_1 );
-			appendNode( a_7, li_7 );
-			appendNode( text_19, a_7 );
-			appendNode( text_20, div_5 );
+			appendNode( text_19, div_5 );
 			appendNode( h5_2, div_5 );
-			appendNode( text_21, h5_2 );
-			appendNode( text_22, div_5 );
+			appendNode( text_20, h5_2 );
+			appendNode( text_21, div_5 );
 			appendNode( ul_2, div_5 );
+			appendNode( li_7, ul_2 );
+			appendNode( a_7, li_7 );
+			appendNode( text_22, a_7 );
 			appendNode( li_8, ul_2 );
 			appendNode( a_8, li_8 );
 			appendNode( text_23, a_8 );
@@ -1337,15 +1605,15 @@ function create_main_fragment$1 ( state, component ) {
 			appendNode( li_12, ul_2 );
 			appendNode( a_12, li_12 );
 			appendNode( text_27, a_12 );
-			appendNode( li_13, ul_2 );
-			appendNode( a_13, li_13 );
-			appendNode( text_28, a_13 );
-			appendNode( text_30, div_3 );
+			appendNode( text_29, div_3 );
 			appendNode( div_6, div_3 );
 			appendNode( h5_3, div_6 );
-			appendNode( text_31, h5_3 );
-			appendNode( text_32, div_6 );
+			appendNode( text_30, h5_3 );
+			appendNode( text_31, div_6 );
 			appendNode( ul_3, div_6 );
+			appendNode( li_13, ul_3 );
+			appendNode( a_13, li_13 );
+			appendNode( text_32, a_13 );
 			appendNode( li_14, ul_3 );
 			appendNode( a_14, li_14 );
 			appendNode( text_33, a_14 );
@@ -1367,16 +1635,29 @@ function create_main_fragment$1 ( state, component ) {
 			appendNode( li_20, ul_3 );
 			appendNode( a_20, li_20 );
 			appendNode( text_39, a_20 );
-			appendNode( li_21, ul_3 );
-			appendNode( a_21, li_21 );
-			appendNode( text_40, a_21 );
+			insertNode( text_43, target, anchor );
+			introduction._fragment.mount( target, anchor );
+			insertNode( text_44, target, anchor );
+			systems._fragment.mount( target, anchor );
+			insertNode( text_45, target, anchor );
+			usage._fragment.mount( target, anchor );
 		},
 
 		unmount: function () {
 			detachNode( div );
+			detachNode( text_43 );
+			introduction._fragment.unmount();
+			detachNode( text_44 );
+			systems._fragment.unmount();
+			detachNode( text_45 );
+			usage._fragment.unmount();
 		},
 
-		destroy: noop
+		destroy: function () {
+			introduction.destroy( false );
+			systems.destroy( false );
+			usage.destroy( false );
+		}
 	};
 }
 
@@ -1394,11 +1675,25 @@ function Home ( options ) {
 	this._root = options._root || this;
 	this._yield = options._yield;
 
+	if ( !options._root ) {
+		this._oncreate = [];
+		this._beforecreate = [];
+		this._aftercreate = [];
+	}
+
 	this._fragment = create_main_fragment$1( this._state, this );
 
 	if ( options.target ) {
 		this._fragment.create();
 		this._fragment.mount( options.target, null );
+	}
+
+	if ( !options._root ) {
+		this._lock = true;
+		callAll(this._beforecreate);
+		callAll(this._oncreate);
+		callAll(this._aftercreate);
+		this._lock = false;
 	}
 }
 
@@ -1411,7 +1706,7 @@ Home.prototype._set = function _set ( newState ) {
 	dispatchObservers( this, this._observers.post, newState, oldState );
 };
 
-function create_main_fragment$2 ( state, component ) {
+function create_main_fragment$5 ( state, component ) {
 	var h1, text;
 
 	return {
@@ -1447,7 +1742,7 @@ function _404 ( options ) {
 	this._root = options._root || this;
 	this._yield = options._yield;
 
-	this._fragment = create_main_fragment$2( this._state, this );
+	this._fragment = create_main_fragment$5( this._state, this );
 
 	if ( options.target ) {
 		this._fragment.create();
@@ -1464,23 +1759,1797 @@ _404.prototype._set = function _set ( newState ) {
 	dispatchObservers( this, this._observers.post, newState, oldState );
 };
 
+var template$1 = (function () {
+  return {
+    oncreate () {
+      console.log(location.pathname);
+    }
+  };
+}());
+
+function create_main_fragment$6 ( state, component ) {
+	var div, div_1, article, header, h1, text, text_1, blockquote, text_2, text_4, section, p, text_5;
+
+	return {
+		create: function () {
+			div = createElement( 'div' );
+			div_1 = createElement( 'div' );
+			article = createElement( 'article' );
+			header = createElement( 'header' );
+			h1 = createElement( 'h1' );
+			text = createText( "An Article" );
+			text_1 = createText( "\n        " );
+			blockquote = createElement( 'blockquote' );
+			text_2 = createText( "With smart words and things!" );
+			text_4 = createText( "\n      " );
+			section = createElement( 'section' );
+			p = createElement( 'p' );
+			text_5 = createText( "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32." );
+			this.hydrate();
+		},
+
+		hydrate: function ( nodes ) {
+			div.className = "container";
+			div_1.className = "row";
+			article.className = "col";
+			h1.className = "lead-4";
+		},
+
+		mount: function ( target, anchor ) {
+			insertNode( div, target, anchor );
+			appendNode( div_1, div );
+			appendNode( article, div_1 );
+			appendNode( header, article );
+			appendNode( h1, header );
+			appendNode( text, h1 );
+			appendNode( text_1, header );
+			appendNode( blockquote, header );
+			appendNode( text_2, blockquote );
+			appendNode( text_4, article );
+			appendNode( section, article );
+			appendNode( p, section );
+			appendNode( text_5, p );
+		},
+
+		unmount: function () {
+			detachNode( div );
+		},
+
+		destroy: noop
+	};
+}
+
+function Article ( options ) {
+	options = options || {};
+	this._state = options.data || {};
+
+	this._observers = {
+		pre: Object.create( null ),
+		post: Object.create( null )
+	};
+
+	this._handlers = Object.create( null );
+
+	this._root = options._root || this;
+	this._yield = options._yield;
+
+	var oncreate = template$1.oncreate.bind( this );
+
+	if ( !options._root ) {
+		this._oncreate = [oncreate];
+	} else {
+	 	this._root._oncreate.push(oncreate);
+	 }
+
+	this._fragment = create_main_fragment$6( this._state, this );
+
+	if ( options.target ) {
+		this._fragment.create();
+		this._fragment.mount( options.target, null );
+	}
+
+	if ( !options._root ) {
+		callAll(this._oncreate);
+	}
+}
+
+assign( Article.prototype, proto );
+
+Article.prototype._set = function _set ( newState ) {
+	var oldState = this._state;
+	this._state = assign( {}, oldState, newState );
+	dispatchObservers( this, this._observers.pre, newState, oldState );
+	dispatchObservers( this, this._observers.post, newState, oldState );
+};
+
+function create_main_fragment$7 ( state, component ) {
+	var div, div_1, article, h1, text, text_1, p, text_2, text_4, section, table, thead, tr, th, text_5, text_6, th_1, text_7, text_8, th_2, text_9, text_12, tbody, tr_1, td, text_13, text_14, td_1, text_15, text_16, td_2, text_17, text_19, tr_2, td_3, text_20, text_21, td_4, text_22, text_23, td_5, text_24, text_26, tr_3, td_6, text_27, text_28, td_7, text_29, text_30, td_8, text_31, text_33, tr_4, td_9, text_34, text_35, td_10, text_36, text_37, td_11, text_38, text_40, tr_5, td_12, text_41, text_42, td_13, text_43, text_44, td_14, text_45, text_47, tr_6, td_15, text_48, text_49, td_16, text_50, text_51, td_17, text_52, text_54, tr_7, td_18, text_55, text_56, td_19, text_57, text_58, td_20, text_59, text_61, tr_8, td_21, text_62, text_63, td_22, text_64, text_65, td_23, text_66, b, text_67, text_68, text_70, tr_9, td_24, text_71, text_72, td_25, text_73, text_74, td_26, text_75, b_1, text_76, text_77, text_79, tr_10, td_27, text_80, text_81, td_28, text_82, text_83, td_29, text_84, b_2, text_85, text_86, text_88, tr_11, td_30, text_89, text_90, td_31, text_91, text_92, td_32, text_93, b_3, text_94, text_95, text_97, tr_12, td_33, text_98, text_99, td_34, text_100, text_101, td_35, text_102, b_4, text_103, text_104, text_106, tr_13, td_36, text_107, text_108, td_37, text_109, text_110, td_38, text_111, text_113, tr_14, td_39, text_114, text_115, td_40, text_116, text_117, td_41, text_118, text_120, tr_15, td_42, text_121, text_122, td_43, text_123, text_124, td_44, text_125, text_127, tr_16, td_45, text_128, text_129, td_46, text_130, text_131, td_47, text_132, text_134, tr_17, td_48, text_135, text_136, td_49, text_137, text_138, td_50, text_139, text_141, tr_18, td_51, text_142, text_143, td_52, text_144, text_145, td_53, text_146, text_148, tr_19, td_54, text_149, text_150, td_55, text_151, text_152, td_56, text_153;
+
+	return {
+		create: function () {
+			div = createElement( 'div' );
+			div_1 = createElement( 'div' );
+			article = createElement( 'article' );
+			h1 = createElement( 'h1' );
+			text = createText( "Configuration" );
+			text_1 = createText( "\n      " );
+			p = createElement( 'p' );
+			text_2 = createText( "The configuration variables are the they dials and knobs that adjsut everything. Wowza!" );
+			text_4 = createText( "\n    " );
+			section = createElement( 'section' );
+			table = createElement( 'table' );
+			thead = createElement( 'thead' );
+			tr = createElement( 'tr' );
+			th = createElement( 'th' );
+			text_5 = createText( "Variable" );
+			text_6 = createText( "\n            " );
+			th_1 = createElement( 'th' );
+			text_7 = createText( "Default" );
+			text_8 = createText( "\n            " );
+			th_2 = createElement( 'th' );
+			text_9 = createText( "What it do" );
+			text_12 = createText( "\n        " );
+			tbody = createElement( 'tbody' );
+			tr_1 = createElement( 'tr' );
+			td = createElement( 'td' );
+			text_13 = createText( "$rem-size" );
+			text_14 = createText( "\n            " );
+			td_1 = createElement( 'td' );
+			text_15 = createText( "16px" );
+			text_16 = createText( "\n            " );
+			td_2 = createElement( 'td' );
+			text_17 = createText( "Defines the basic size from which all others are derived." );
+			text_19 = createText( "\n          " );
+			tr_2 = createElement( 'tr' );
+			td_3 = createElement( 'td' );
+			text_20 = createText( "$ratio" );
+			text_21 = createText( "\n            " );
+			td_4 = createElement( 'td' );
+			text_22 = createText( "1.618" );
+			text_23 = createText( "\n            " );
+			td_5 = createElement( 'td' );
+			text_24 = createText( "Establishes a ratio for sizing along the typographic scale." );
+			text_26 = createText( "\n          " );
+			tr_3 = createElement( 'tr' );
+			td_6 = createElement( 'td' );
+			text_27 = createText( "$body-size" );
+			text_28 = createText( "\n            " );
+			td_7 = createElement( 'td' );
+			text_29 = createText( "1rem" );
+			text_30 = createText( "\n            " );
+			td_8 = createElement( 'td' );
+			text_31 = createText( "Defines the default size of body type." );
+			text_33 = createText( "\n          " );
+			tr_4 = createElement( 'tr' );
+			td_9 = createElement( 'td' );
+			text_34 = createText( "$small-size" );
+			text_35 = createText( "\n            " );
+			td_10 = createElement( 'td' );
+			text_36 = createText( "0.85rem" );
+			text_37 = createText( "\n            " );
+			td_11 = createElement( 'td' );
+			text_38 = createText( "Defines a secondary, smaller size for type. Is used to create a double stranded typographic scale." );
+			text_40 = createText( "\n          " );
+			tr_5 = createElement( 'tr' );
+			td_12 = createElement( 'td' );
+			text_41 = createText( "$baseline" );
+			text_42 = createText( "\n            " );
+			td_13 = createElement( 'td' );
+			text_43 = createText( "0.25rem" );
+			text_44 = createText( "\n            " );
+			td_14 = createElement( 'td' );
+			text_45 = createText( "Establishes the baseline grid." );
+			text_47 = createText( "\n          " );
+			tr_6 = createElement( 'tr' );
+			td_15 = createElement( 'td' );
+			text_48 = createText( "$leading" );
+			text_49 = createText( "\n            " );
+			td_16 = createElement( 'td' );
+			text_50 = createText( "5*$baseline" );
+			text_51 = createText( "\n            " );
+			td_17 = createElement( 'td' );
+			text_52 = createText( "Establishes the default leading for type." );
+			text_54 = createText( "\n          " );
+			tr_7 = createElement( 'tr' );
+			td_18 = createElement( 'td' );
+			text_55 = createText( "$indent" );
+			text_56 = createText( "\n            " );
+			td_19 = createElement( 'td' );
+			text_57 = createText( "1em" );
+			text_58 = createText( "\n            " );
+			td_20 = createElement( 'td' );
+			text_59 = createText( "Establishes the standard indent to use when applicable." );
+			text_61 = createText( "\n          " );
+			tr_8 = createElement( 'tr' );
+			td_21 = createElement( 'td' );
+			text_62 = createText( "$container-ratio" );
+			text_63 = createText( "\n            " );
+			td_22 = createElement( 'td' );
+			text_64 = createText( "11/12" );
+			text_65 = createText( "\n            " );
+			td_23 = createElement( 'td' );
+			text_66 = createText( "Defines the proportion of grid width to screen width at " );
+			b = createElement( 'b' );
+			text_67 = createText( "small" );
+			text_68 = createText( " screen sizes." );
+			text_70 = createText( "\n          " );
+			tr_9 = createElement( 'tr' );
+			td_24 = createElement( 'td' );
+			text_71 = createText( "$container-ratio-medium" );
+			text_72 = createText( "\n            " );
+			td_25 = createElement( 'td' );
+			text_73 = createText( "10/12" );
+			text_74 = createText( "\n            " );
+			td_26 = createElement( 'td' );
+			text_75 = createText( "Defines the proportion of grid width to screen width at " );
+			b_1 = createElement( 'b' );
+			text_76 = createText( "medium" );
+			text_77 = createText( " screen sizes." );
+			text_79 = createText( "\n          " );
+			tr_10 = createElement( 'tr' );
+			td_27 = createElement( 'td' );
+			text_80 = createText( "$container-ratio-large" );
+			text_81 = createText( "\n            " );
+			td_28 = createElement( 'td' );
+			text_82 = createText( "8/12" );
+			text_83 = createText( "\n            " );
+			td_29 = createElement( 'td' );
+			text_84 = createText( "Defines the proportion of grid width to screen width at " );
+			b_2 = createElement( 'b' );
+			text_85 = createText( "large" );
+			text_86 = createText( " screen sizes." );
+			text_88 = createText( "\n          " );
+			tr_11 = createElement( 'tr' );
+			td_30 = createElement( 'td' );
+			text_89 = createText( "$small" );
+			text_90 = createText( "\n            " );
+			td_31 = createElement( 'td' );
+			text_91 = createText( "30rem" );
+			text_92 = createText( "\n            " );
+			td_32 = createElement( 'td' );
+			text_93 = createText( "When to switch out of " );
+			b_3 = createElement( 'b' );
+			text_94 = createText( "small" );
+			text_95 = createText( " sizing." );
+			text_97 = createText( "\n          " );
+			tr_12 = createElement( 'tr' );
+			td_33 = createElement( 'td' );
+			text_98 = createText( "$large" );
+			text_99 = createText( "\n            " );
+			td_34 = createElement( 'td' );
+			text_100 = createText( "60rem" );
+			text_101 = createText( "\n            " );
+			td_35 = createElement( 'td' );
+			text_102 = createText( "When to switch out of " );
+			b_4 = createElement( 'b' );
+			text_103 = createText( "medium" );
+			text_104 = createText( " sizing." );
+			text_106 = createText( "\n          " );
+			tr_13 = createElement( 'tr' );
+			td_36 = createElement( 'td' );
+			text_107 = createText( "$max-width" );
+			text_108 = createText( "\n            " );
+			td_37 = createElement( 'td' );
+			text_109 = createText( "60rem" );
+			text_110 = createText( "\n            " );
+			td_38 = createElement( 'td' );
+			text_111 = createText( "The maximum width of the content grid." );
+			text_113 = createText( "\n          " );
+			tr_14 = createElement( 'tr' );
+			td_39 = createElement( 'td' );
+			text_114 = createText( "$gutter" );
+			text_115 = createText( "\n            " );
+			td_40 = createElement( 'td' );
+			text_116 = createText( "4%" );
+			text_117 = createText( "\n            " );
+			td_41 = createElement( 'td' );
+			text_118 = createText( "The width of gutters between columns." );
+			text_120 = createText( "\n          " );
+			tr_15 = createElement( 'tr' );
+			td_42 = createElement( 'td' );
+			text_121 = createText( "$col-count" );
+			text_122 = createText( "\n            " );
+			td_43 = createElement( 'td' );
+			text_123 = createText( "12" );
+			text_124 = createText( "\n            " );
+			td_44 = createElement( 'td' );
+			text_125 = createText( "The number of columns to build the grid with." );
+			text_127 = createText( "\n          " );
+			tr_16 = createElement( 'tr' );
+			td_45 = createElement( 'td' );
+			text_128 = createText( "$padding-x" );
+			text_129 = createText( "\n            " );
+			td_46 = createElement( 'td' );
+			text_130 = createText( "$gutter" );
+			text_131 = createText( "\n            " );
+			td_47 = createElement( 'td' );
+			text_132 = createText( "The default padding of columns on the x-axis." );
+			text_134 = createText( "\n          " );
+			tr_17 = createElement( 'tr' );
+			td_48 = createElement( 'td' );
+			text_135 = createText( "$padding-y" );
+			text_136 = createText( "\n            " );
+			td_49 = createElement( 'td' );
+			text_137 = createText( "$baseline" );
+			text_138 = createText( "\n            " );
+			td_50 = createElement( 'td' );
+			text_139 = createText( "The default padding of columns on the y-axis." );
+			text_141 = createText( "\n          " );
+			tr_18 = createElement( 'tr' );
+			td_51 = createElement( 'td' );
+			text_142 = createText( "$padding-outer-x" );
+			text_143 = createText( "\n            " );
+			td_52 = createElement( 'td' );
+			text_144 = createText( "$gutter / 2" );
+			text_145 = createText( "\n            " );
+			td_53 = createElement( 'td' );
+			text_146 = createText( "The default padding of outside columns on the x-axis." );
+			text_148 = createText( "\n          " );
+			tr_19 = createElement( 'tr' );
+			td_54 = createElement( 'td' );
+			text_149 = createText( "$padding-outer-y" );
+			text_150 = createText( "\n            " );
+			td_55 = createElement( 'td' );
+			text_151 = createText( "$baseline" );
+			text_152 = createText( "\n            " );
+			td_56 = createElement( 'td' );
+			text_153 = createText( "The default padding of outside columns on the y-axis." );
+			this.hydrate();
+		},
+
+		hydrate: function ( nodes ) {
+			div.className = "container";
+			div_1.className = "row";
+			article.className = "col col-is-12";
+			section.className = "col col-is-12";
+		},
+
+		mount: function ( target, anchor ) {
+			insertNode( div, target, anchor );
+			appendNode( div_1, div );
+			appendNode( article, div_1 );
+			appendNode( h1, article );
+			appendNode( text, h1 );
+			appendNode( text_1, article );
+			appendNode( p, article );
+			appendNode( text_2, p );
+			appendNode( text_4, div_1 );
+			appendNode( section, div_1 );
+			appendNode( table, section );
+			appendNode( thead, table );
+			appendNode( tr, thead );
+			appendNode( th, tr );
+			appendNode( text_5, th );
+			appendNode( text_6, tr );
+			appendNode( th_1, tr );
+			appendNode( text_7, th_1 );
+			appendNode( text_8, tr );
+			appendNode( th_2, tr );
+			appendNode( text_9, th_2 );
+			appendNode( text_12, table );
+			appendNode( tbody, table );
+			appendNode( tr_1, tbody );
+			appendNode( td, tr_1 );
+			appendNode( text_13, td );
+			appendNode( text_14, tr_1 );
+			appendNode( td_1, tr_1 );
+			appendNode( text_15, td_1 );
+			appendNode( text_16, tr_1 );
+			appendNode( td_2, tr_1 );
+			appendNode( text_17, td_2 );
+			appendNode( text_19, tbody );
+			appendNode( tr_2, tbody );
+			appendNode( td_3, tr_2 );
+			appendNode( text_20, td_3 );
+			appendNode( text_21, tr_2 );
+			appendNode( td_4, tr_2 );
+			appendNode( text_22, td_4 );
+			appendNode( text_23, tr_2 );
+			appendNode( td_5, tr_2 );
+			appendNode( text_24, td_5 );
+			appendNode( text_26, tbody );
+			appendNode( tr_3, tbody );
+			appendNode( td_6, tr_3 );
+			appendNode( text_27, td_6 );
+			appendNode( text_28, tr_3 );
+			appendNode( td_7, tr_3 );
+			appendNode( text_29, td_7 );
+			appendNode( text_30, tr_3 );
+			appendNode( td_8, tr_3 );
+			appendNode( text_31, td_8 );
+			appendNode( text_33, tbody );
+			appendNode( tr_4, tbody );
+			appendNode( td_9, tr_4 );
+			appendNode( text_34, td_9 );
+			appendNode( text_35, tr_4 );
+			appendNode( td_10, tr_4 );
+			appendNode( text_36, td_10 );
+			appendNode( text_37, tr_4 );
+			appendNode( td_11, tr_4 );
+			appendNode( text_38, td_11 );
+			appendNode( text_40, tbody );
+			appendNode( tr_5, tbody );
+			appendNode( td_12, tr_5 );
+			appendNode( text_41, td_12 );
+			appendNode( text_42, tr_5 );
+			appendNode( td_13, tr_5 );
+			appendNode( text_43, td_13 );
+			appendNode( text_44, tr_5 );
+			appendNode( td_14, tr_5 );
+			appendNode( text_45, td_14 );
+			appendNode( text_47, tbody );
+			appendNode( tr_6, tbody );
+			appendNode( td_15, tr_6 );
+			appendNode( text_48, td_15 );
+			appendNode( text_49, tr_6 );
+			appendNode( td_16, tr_6 );
+			appendNode( text_50, td_16 );
+			appendNode( text_51, tr_6 );
+			appendNode( td_17, tr_6 );
+			appendNode( text_52, td_17 );
+			appendNode( text_54, tbody );
+			appendNode( tr_7, tbody );
+			appendNode( td_18, tr_7 );
+			appendNode( text_55, td_18 );
+			appendNode( text_56, tr_7 );
+			appendNode( td_19, tr_7 );
+			appendNode( text_57, td_19 );
+			appendNode( text_58, tr_7 );
+			appendNode( td_20, tr_7 );
+			appendNode( text_59, td_20 );
+			appendNode( text_61, tbody );
+			appendNode( tr_8, tbody );
+			appendNode( td_21, tr_8 );
+			appendNode( text_62, td_21 );
+			appendNode( text_63, tr_8 );
+			appendNode( td_22, tr_8 );
+			appendNode( text_64, td_22 );
+			appendNode( text_65, tr_8 );
+			appendNode( td_23, tr_8 );
+			appendNode( text_66, td_23 );
+			appendNode( b, td_23 );
+			appendNode( text_67, b );
+			appendNode( text_68, td_23 );
+			appendNode( text_70, tbody );
+			appendNode( tr_9, tbody );
+			appendNode( td_24, tr_9 );
+			appendNode( text_71, td_24 );
+			appendNode( text_72, tr_9 );
+			appendNode( td_25, tr_9 );
+			appendNode( text_73, td_25 );
+			appendNode( text_74, tr_9 );
+			appendNode( td_26, tr_9 );
+			appendNode( text_75, td_26 );
+			appendNode( b_1, td_26 );
+			appendNode( text_76, b_1 );
+			appendNode( text_77, td_26 );
+			appendNode( text_79, tbody );
+			appendNode( tr_10, tbody );
+			appendNode( td_27, tr_10 );
+			appendNode( text_80, td_27 );
+			appendNode( text_81, tr_10 );
+			appendNode( td_28, tr_10 );
+			appendNode( text_82, td_28 );
+			appendNode( text_83, tr_10 );
+			appendNode( td_29, tr_10 );
+			appendNode( text_84, td_29 );
+			appendNode( b_2, td_29 );
+			appendNode( text_85, b_2 );
+			appendNode( text_86, td_29 );
+			appendNode( text_88, tbody );
+			appendNode( tr_11, tbody );
+			appendNode( td_30, tr_11 );
+			appendNode( text_89, td_30 );
+			appendNode( text_90, tr_11 );
+			appendNode( td_31, tr_11 );
+			appendNode( text_91, td_31 );
+			appendNode( text_92, tr_11 );
+			appendNode( td_32, tr_11 );
+			appendNode( text_93, td_32 );
+			appendNode( b_3, td_32 );
+			appendNode( text_94, b_3 );
+			appendNode( text_95, td_32 );
+			appendNode( text_97, tbody );
+			appendNode( tr_12, tbody );
+			appendNode( td_33, tr_12 );
+			appendNode( text_98, td_33 );
+			appendNode( text_99, tr_12 );
+			appendNode( td_34, tr_12 );
+			appendNode( text_100, td_34 );
+			appendNode( text_101, tr_12 );
+			appendNode( td_35, tr_12 );
+			appendNode( text_102, td_35 );
+			appendNode( b_4, td_35 );
+			appendNode( text_103, b_4 );
+			appendNode( text_104, td_35 );
+			appendNode( text_106, tbody );
+			appendNode( tr_13, tbody );
+			appendNode( td_36, tr_13 );
+			appendNode( text_107, td_36 );
+			appendNode( text_108, tr_13 );
+			appendNode( td_37, tr_13 );
+			appendNode( text_109, td_37 );
+			appendNode( text_110, tr_13 );
+			appendNode( td_38, tr_13 );
+			appendNode( text_111, td_38 );
+			appendNode( text_113, tbody );
+			appendNode( tr_14, tbody );
+			appendNode( td_39, tr_14 );
+			appendNode( text_114, td_39 );
+			appendNode( text_115, tr_14 );
+			appendNode( td_40, tr_14 );
+			appendNode( text_116, td_40 );
+			appendNode( text_117, tr_14 );
+			appendNode( td_41, tr_14 );
+			appendNode( text_118, td_41 );
+			appendNode( text_120, tbody );
+			appendNode( tr_15, tbody );
+			appendNode( td_42, tr_15 );
+			appendNode( text_121, td_42 );
+			appendNode( text_122, tr_15 );
+			appendNode( td_43, tr_15 );
+			appendNode( text_123, td_43 );
+			appendNode( text_124, tr_15 );
+			appendNode( td_44, tr_15 );
+			appendNode( text_125, td_44 );
+			appendNode( text_127, tbody );
+			appendNode( tr_16, tbody );
+			appendNode( td_45, tr_16 );
+			appendNode( text_128, td_45 );
+			appendNode( text_129, tr_16 );
+			appendNode( td_46, tr_16 );
+			appendNode( text_130, td_46 );
+			appendNode( text_131, tr_16 );
+			appendNode( td_47, tr_16 );
+			appendNode( text_132, td_47 );
+			appendNode( text_134, tbody );
+			appendNode( tr_17, tbody );
+			appendNode( td_48, tr_17 );
+			appendNode( text_135, td_48 );
+			appendNode( text_136, tr_17 );
+			appendNode( td_49, tr_17 );
+			appendNode( text_137, td_49 );
+			appendNode( text_138, tr_17 );
+			appendNode( td_50, tr_17 );
+			appendNode( text_139, td_50 );
+			appendNode( text_141, tbody );
+			appendNode( tr_18, tbody );
+			appendNode( td_51, tr_18 );
+			appendNode( text_142, td_51 );
+			appendNode( text_143, tr_18 );
+			appendNode( td_52, tr_18 );
+			appendNode( text_144, td_52 );
+			appendNode( text_145, tr_18 );
+			appendNode( td_53, tr_18 );
+			appendNode( text_146, td_53 );
+			appendNode( text_148, tbody );
+			appendNode( tr_19, tbody );
+			appendNode( td_54, tr_19 );
+			appendNode( text_149, td_54 );
+			appendNode( text_150, tr_19 );
+			appendNode( td_55, tr_19 );
+			appendNode( text_151, td_55 );
+			appendNode( text_152, tr_19 );
+			appendNode( td_56, tr_19 );
+			appendNode( text_153, td_56 );
+		},
+
+		unmount: function () {
+			detachNode( div );
+		},
+
+		destroy: noop
+	};
+}
+
+function _04_Configuration ( options ) {
+	options = options || {};
+	this._state = options.data || {};
+
+	this._observers = {
+		pre: Object.create( null ),
+		post: Object.create( null )
+	};
+
+	this._handlers = Object.create( null );
+
+	this._root = options._root || this;
+	this._yield = options._yield;
+
+	this._fragment = create_main_fragment$7( this._state, this );
+
+	if ( options.target ) {
+		this._fragment.create();
+		this._fragment.mount( options.target, null );
+	}
+}
+
+assign( _04_Configuration.prototype, proto );
+
+_04_Configuration.prototype._set = function _set ( newState ) {
+	var oldState = this._state;
+	this._state = assign( {}, oldState, newState );
+	dispatchObservers( this, this._observers.pre, newState, oldState );
+	dispatchObservers( this, this._observers.post, newState, oldState );
+};
+
+function create_main_fragment$8 ( state, component ) {
+	var div, div_1, article, h1, text, text_1, p, text_2, text_4, section, h2, text_5, text_6, table, thead, tr, th, text_7, text_8, th_1, text_9, text_10, th_2, text_11, text_14, tbody, tr_1, td, text_15, text_16, td_1, text_17, text_18, td_2, text_19, b, text_20, text_21, text_23, tr_2, td_3, text_24, text_25, td_4, text_26, text_27, td_5, text_28, b_1, text_29, text_30, text_32, tr_3, td_6, text_33, text_34, td_7, text_35, text_36, td_8, text_37, text_42, section_1, h2_1, text_43, text_44, pre, code, text_45;
+
+	return {
+		create: function () {
+			div = createElement( 'div' );
+			div_1 = createElement( 'div' );
+			article = createElement( 'article' );
+			h1 = createElement( 'h1' );
+			text = createText( "Media Queries" );
+			text_1 = createText( "\n      " );
+			p = createElement( 'p' );
+			text_2 = createText( "Dead simple mixins for the masses. Is used extensively in other pojects" );
+			text_4 = createText( "\n    " );
+			section = createElement( 'section' );
+			h2 = createElement( 'h2' );
+			text_5 = createText( "Relevant configuation:" );
+			text_6 = createText( "\n      " );
+			table = createElement( 'table' );
+			thead = createElement( 'thead' );
+			tr = createElement( 'tr' );
+			th = createElement( 'th' );
+			text_7 = createText( "Variable" );
+			text_8 = createText( "\n            " );
+			th_1 = createElement( 'th' );
+			text_9 = createText( "Default" );
+			text_10 = createText( "\n            " );
+			th_2 = createElement( 'th' );
+			text_11 = createText( "What it do" );
+			text_14 = createText( "\n        " );
+			tbody = createElement( 'tbody' );
+			tr_1 = createElement( 'tr' );
+			td = createElement( 'td' );
+			text_15 = createText( "$small" );
+			text_16 = createText( "\n            " );
+			td_1 = createElement( 'td' );
+			text_17 = createText( "30rem" );
+			text_18 = createText( "\n            " );
+			td_2 = createElement( 'td' );
+			text_19 = createText( "When to switch out of " );
+			b = createElement( 'b' );
+			text_20 = createText( "small" );
+			text_21 = createText( " sizing." );
+			text_23 = createText( "\n          " );
+			tr_2 = createElement( 'tr' );
+			td_3 = createElement( 'td' );
+			text_24 = createText( "$large" );
+			text_25 = createText( "\n            " );
+			td_4 = createElement( 'td' );
+			text_26 = createText( "60rem" );
+			text_27 = createText( "\n            " );
+			td_5 = createElement( 'td' );
+			text_28 = createText( "When to switch out of " );
+			b_1 = createElement( 'b' );
+			text_29 = createText( "medium" );
+			text_30 = createText( " sizing." );
+			text_32 = createText( "\n          " );
+			tr_3 = createElement( 'tr' );
+			td_6 = createElement( 'td' );
+			text_33 = createText( "$max-width" );
+			text_34 = createText( "\n            " );
+			td_7 = createElement( 'td' );
+			text_35 = createText( "60rem" );
+			text_36 = createText( "\n            " );
+			td_8 = createElement( 'td' );
+			text_37 = createText( "The maximum width of the content grid." );
+			text_42 = createText( "\n    " );
+			section_1 = createElement( 'section' );
+			h2_1 = createElement( 'h2' );
+			text_43 = createText( "Mixins:" );
+			text_44 = createText( "\n      " );
+			pre = createElement( 'pre' );
+			code = createElement( 'code' );
+			text_45 = createText( "\n@include not-small() {... styles to apply above small width}\n\n@include medium-break() {... styles to apply at between small and large widths}\n\n@include large-break() {... styles to apply above large widths}\n      " );
+			this.hydrate();
+		},
+
+		hydrate: function ( nodes ) {
+			div.className = "container";
+			div_1.className = "row";
+			article.className = "col col-is-12";
+			section.className = "col col-is-12";
+			section_1.className = "col-is-12";
+		},
+
+		mount: function ( target, anchor ) {
+			insertNode( div, target, anchor );
+			appendNode( div_1, div );
+			appendNode( article, div_1 );
+			appendNode( h1, article );
+			appendNode( text, h1 );
+			appendNode( text_1, article );
+			appendNode( p, article );
+			appendNode( text_2, p );
+			appendNode( text_4, div_1 );
+			appendNode( section, div_1 );
+			appendNode( h2, section );
+			appendNode( text_5, h2 );
+			appendNode( text_6, section );
+			appendNode( table, section );
+			appendNode( thead, table );
+			appendNode( tr, thead );
+			appendNode( th, tr );
+			appendNode( text_7, th );
+			appendNode( text_8, tr );
+			appendNode( th_1, tr );
+			appendNode( text_9, th_1 );
+			appendNode( text_10, tr );
+			appendNode( th_2, tr );
+			appendNode( text_11, th_2 );
+			appendNode( text_14, table );
+			appendNode( tbody, table );
+			appendNode( tr_1, tbody );
+			appendNode( td, tr_1 );
+			appendNode( text_15, td );
+			appendNode( text_16, tr_1 );
+			appendNode( td_1, tr_1 );
+			appendNode( text_17, td_1 );
+			appendNode( text_18, tr_1 );
+			appendNode( td_2, tr_1 );
+			appendNode( text_19, td_2 );
+			appendNode( b, td_2 );
+			appendNode( text_20, b );
+			appendNode( text_21, td_2 );
+			appendNode( text_23, tbody );
+			appendNode( tr_2, tbody );
+			appendNode( td_3, tr_2 );
+			appendNode( text_24, td_3 );
+			appendNode( text_25, tr_2 );
+			appendNode( td_4, tr_2 );
+			appendNode( text_26, td_4 );
+			appendNode( text_27, tr_2 );
+			appendNode( td_5, tr_2 );
+			appendNode( text_28, td_5 );
+			appendNode( b_1, td_5 );
+			appendNode( text_29, b_1 );
+			appendNode( text_30, td_5 );
+			appendNode( text_32, tbody );
+			appendNode( tr_3, tbody );
+			appendNode( td_6, tr_3 );
+			appendNode( text_33, td_6 );
+			appendNode( text_34, tr_3 );
+			appendNode( td_7, tr_3 );
+			appendNode( text_35, td_7 );
+			appendNode( text_36, tr_3 );
+			appendNode( td_8, tr_3 );
+			appendNode( text_37, td_8 );
+			appendNode( text_42, div_1 );
+			appendNode( section_1, div_1 );
+			appendNode( h2_1, section_1 );
+			appendNode( text_43, h2_1 );
+			appendNode( text_44, section_1 );
+			appendNode( pre, section_1 );
+			appendNode( code, pre );
+			appendNode( text_45, code );
+		},
+
+		unmount: function () {
+			detachNode( div );
+		},
+
+		destroy: noop
+	};
+}
+
+function _05_Media_Queries ( options ) {
+	options = options || {};
+	this._state = options.data || {};
+
+	this._observers = {
+		pre: Object.create( null ),
+		post: Object.create( null )
+	};
+
+	this._handlers = Object.create( null );
+
+	this._root = options._root || this;
+	this._yield = options._yield;
+
+	this._fragment = create_main_fragment$8( this._state, this );
+
+	if ( options.target ) {
+		this._fragment.create();
+		this._fragment.mount( options.target, null );
+	}
+}
+
+assign( _05_Media_Queries.prototype, proto );
+
+_05_Media_Queries.prototype._set = function _set ( newState ) {
+	var oldState = this._state;
+	this._state = assign( {}, oldState, newState );
+	dispatchObservers( this, this._observers.pre, newState, oldState );
+	dispatchObservers( this, this._observers.post, newState, oldState );
+};
+
+function create_main_fragment$9 ( state, component ) {
+	var div, div_1, article, h1, text, text_1, p, text_2, a, text_3, text_4, text_6, section, h2, text_7, text_8, table, thead, tr, th, text_9, text_10, th_1, text_11, text_12, th_2, text_13, text_16, tbody, tr_1, td, text_17, text_18, td_1, text_19, text_20, td_2, text_21, text_23, tr_2, td_3, text_24, text_25, td_4, text_26, text_27, td_5, text_28, b, text_29, text_30, text_32, tr_3, td_6, text_33, text_34, td_7, text_35, text_36, td_8, text_37, b_1, text_38, text_39, text_41, tr_4, td_9, text_42, text_43, td_10, text_44, text_45, td_11, text_46, b_2, text_47, text_48, text_50, tr_5, td_12, text_51, text_52, td_13, text_53, text_54, td_14, text_55, b_3, text_56, text_57, text_59, tr_6, td_15, text_60, text_61, td_16, text_62, text_63, td_17, text_64, b_4, text_65, text_66, text_68, tr_7, td_18, text_69, text_70, td_19, text_71, text_72, td_20, text_73, text_75, tr_8, td_21, text_76, text_77, td_22, text_78, text_79, td_23, text_80, text_82, tr_9, td_24, text_83, text_84, td_25, text_85, text_86, td_26, text_87, text_89, tr_10, td_27, text_90, text_91, td_28, text_92, text_93, td_29, text_94, text_96, tr_11, td_30, text_97, text_98, td_31, text_99, text_100, td_32, text_101, text_103, tr_12, td_33, text_104, text_105, td_34, text_106, text_107, td_35, text_108, text_110, tr_13, td_36, text_111, text_112, td_37, text_113, text_114, td_38, text_115, text_121, div_2, section_1, h3, text_122, text_123, p_1, text_124, text_125, pre, code, text_126, text_127, h3_1, text_128, text_129, p_2, text_130, text_131, pre_1, code_1, text_132, text_133, h3_2, text_134, text_135, p_3, text_136, text_137, pre_2, code_2, text_138, text_139, h3_3, text_140, text_141, p_4, text_142, text_143, p_5, text_144, text_145, pre_3, code_3, text_146, text_150, div_3, h1_1, text_151;
+
+	return {
+		create: function () {
+			div = createElement( 'div' );
+			div_1 = createElement( 'div' );
+			article = createElement( 'article' );
+			h1 = createElement( 'h1' );
+			text = createText( "Flex Grid" );
+			text_1 = createText( "\n      " );
+			p = createElement( 'p' );
+			text_2 = createText( "The power of grids systems the joy of flexbox. Peep the " );
+			a = createElement( 'a' );
+			text_3 = createText( "example" );
+			text_4 = createText( " below to see it in action." );
+			text_6 = createText( "\n    " );
+			section = createElement( 'section' );
+			h2 = createElement( 'h2' );
+			text_7 = createText( "Relevant Configuration:" );
+			text_8 = createText( "\n      " );
+			table = createElement( 'table' );
+			thead = createElement( 'thead' );
+			tr = createElement( 'tr' );
+			th = createElement( 'th' );
+			text_9 = createText( "Variable" );
+			text_10 = createText( "\n            " );
+			th_1 = createElement( 'th' );
+			text_11 = createText( "Default" );
+			text_12 = createText( "\n            " );
+			th_2 = createElement( 'th' );
+			text_13 = createText( "What it do" );
+			text_16 = createText( "\n        " );
+			tbody = createElement( 'tbody' );
+			tr_1 = createElement( 'tr' );
+			td = createElement( 'td' );
+			text_17 = createText( "$baseline" );
+			text_18 = createText( "\n            " );
+			td_1 = createElement( 'td' );
+			text_19 = createText( "0.25rem" );
+			text_20 = createText( "\n            " );
+			td_2 = createElement( 'td' );
+			text_21 = createText( "Establishes the baseline grid." );
+			text_23 = createText( "\n          " );
+			tr_2 = createElement( 'tr' );
+			td_3 = createElement( 'td' );
+			text_24 = createText( "$container-ratio" );
+			text_25 = createText( "\n            " );
+			td_4 = createElement( 'td' );
+			text_26 = createText( "11/12" );
+			text_27 = createText( "\n            " );
+			td_5 = createElement( 'td' );
+			text_28 = createText( "Defines the proportion of grid width to screen width at " );
+			b = createElement( 'b' );
+			text_29 = createText( "small" );
+			text_30 = createText( " screen sizes." );
+			text_32 = createText( "\n          " );
+			tr_3 = createElement( 'tr' );
+			td_6 = createElement( 'td' );
+			text_33 = createText( "$container-ratio-medium" );
+			text_34 = createText( "\n            " );
+			td_7 = createElement( 'td' );
+			text_35 = createText( "10/12" );
+			text_36 = createText( "\n            " );
+			td_8 = createElement( 'td' );
+			text_37 = createText( "Defines the proportion of grid width to screen width at " );
+			b_1 = createElement( 'b' );
+			text_38 = createText( "medium" );
+			text_39 = createText( " screen sizes." );
+			text_41 = createText( "\n          " );
+			tr_4 = createElement( 'tr' );
+			td_9 = createElement( 'td' );
+			text_42 = createText( "$container-ratio-large" );
+			text_43 = createText( "\n            " );
+			td_10 = createElement( 'td' );
+			text_44 = createText( "8/12" );
+			text_45 = createText( "\n            " );
+			td_11 = createElement( 'td' );
+			text_46 = createText( "Defines the proportion of grid width to screen width at " );
+			b_2 = createElement( 'b' );
+			text_47 = createText( "large" );
+			text_48 = createText( " screen sizes." );
+			text_50 = createText( "\n          " );
+			tr_5 = createElement( 'tr' );
+			td_12 = createElement( 'td' );
+			text_51 = createText( "$small" );
+			text_52 = createText( "\n            " );
+			td_13 = createElement( 'td' );
+			text_53 = createText( "30rem" );
+			text_54 = createText( "\n            " );
+			td_14 = createElement( 'td' );
+			text_55 = createText( "When to switch out of " );
+			b_3 = createElement( 'b' );
+			text_56 = createText( "small" );
+			text_57 = createText( " sizing." );
+			text_59 = createText( "\n          " );
+			tr_6 = createElement( 'tr' );
+			td_15 = createElement( 'td' );
+			text_60 = createText( "$large" );
+			text_61 = createText( "\n            " );
+			td_16 = createElement( 'td' );
+			text_62 = createText( "60rem" );
+			text_63 = createText( "\n            " );
+			td_17 = createElement( 'td' );
+			text_64 = createText( "When to switch out of " );
+			b_4 = createElement( 'b' );
+			text_65 = createText( "medium" );
+			text_66 = createText( " sizing." );
+			text_68 = createText( "\n          " );
+			tr_7 = createElement( 'tr' );
+			td_18 = createElement( 'td' );
+			text_69 = createText( "$max-width" );
+			text_70 = createText( "\n            " );
+			td_19 = createElement( 'td' );
+			text_71 = createText( "60rem" );
+			text_72 = createText( "\n            " );
+			td_20 = createElement( 'td' );
+			text_73 = createText( "The maximum width of the content grid." );
+			text_75 = createText( "\n          " );
+			tr_8 = createElement( 'tr' );
+			td_21 = createElement( 'td' );
+			text_76 = createText( "$gutter" );
+			text_77 = createText( "\n            " );
+			td_22 = createElement( 'td' );
+			text_78 = createText( "4%" );
+			text_79 = createText( "\n            " );
+			td_23 = createElement( 'td' );
+			text_80 = createText( "The width of gutters between columns." );
+			text_82 = createText( "\n          " );
+			tr_9 = createElement( 'tr' );
+			td_24 = createElement( 'td' );
+			text_83 = createText( "$col-count" );
+			text_84 = createText( "\n            " );
+			td_25 = createElement( 'td' );
+			text_85 = createText( "12" );
+			text_86 = createText( "\n            " );
+			td_26 = createElement( 'td' );
+			text_87 = createText( "The number of columns to build the grid with." );
+			text_89 = createText( "\n          " );
+			tr_10 = createElement( 'tr' );
+			td_27 = createElement( 'td' );
+			text_90 = createText( "$padding-x" );
+			text_91 = createText( "\n            " );
+			td_28 = createElement( 'td' );
+			text_92 = createText( "$gutter" );
+			text_93 = createText( "\n            " );
+			td_29 = createElement( 'td' );
+			text_94 = createText( "The default padding of columns on the x-axis." );
+			text_96 = createText( "\n          " );
+			tr_11 = createElement( 'tr' );
+			td_30 = createElement( 'td' );
+			text_97 = createText( "$padding-y" );
+			text_98 = createText( "\n            " );
+			td_31 = createElement( 'td' );
+			text_99 = createText( "$baseline" );
+			text_100 = createText( "\n            " );
+			td_32 = createElement( 'td' );
+			text_101 = createText( "The default padding of columns on the y-axis." );
+			text_103 = createText( "\n          " );
+			tr_12 = createElement( 'tr' );
+			td_33 = createElement( 'td' );
+			text_104 = createText( "$padding-outer-x" );
+			text_105 = createText( "\n            " );
+			td_34 = createElement( 'td' );
+			text_106 = createText( "$gutter / 2" );
+			text_107 = createText( "\n            " );
+			td_35 = createElement( 'td' );
+			text_108 = createText( "The default padding of outside columns on the x-axis." );
+			text_110 = createText( "\n          " );
+			tr_13 = createElement( 'tr' );
+			td_36 = createElement( 'td' );
+			text_111 = createText( "$padding-outer-y" );
+			text_112 = createText( "\n            " );
+			td_37 = createElement( 'td' );
+			text_113 = createText( "$baseline" );
+			text_114 = createText( "\n            " );
+			td_38 = createElement( 'td' );
+			text_115 = createText( "The default padding of outside columns on the y-axis." );
+			text_121 = createText( "\n  " );
+			div_2 = createElement( 'div' );
+			section_1 = createElement( 'section' );
+			h3 = createElement( 'h3' );
+			text_122 = createText( "Container" );
+			text_123 = createText( "\n      " );
+			p_1 = createElement( 'p' );
+			text_124 = createText( "Contains the grid to the ratios defined by `contiainer-ratio-x` and `max-width` configutation variables." );
+			text_125 = createText( "\n      " );
+			pre = createElement( 'pre' );
+			code = createElement( 'code' );
+			text_126 = createText( "\n// Mixin\n@inlude container()\n\n// Class\n.container\n      " );
+			text_127 = createText( "\n      " );
+			h3_1 = createElement( 'h3' );
+			text_128 = createText( "Row" );
+			text_129 = createText( "\n      " );
+			p_2 = createElement( 'p' );
+			text_130 = createText( "Defines discreet vertical sections." );
+			text_131 = createText( "\n      " );
+			pre_1 = createElement( 'pre' );
+			code_1 = createElement( 'code' );
+			text_132 = createText( "\n// Base Mixin\n@include row();\n\n// Base Class\n.row\n\n// Modifier Mixins\n@include row-is-centered();\n@include row-is-right();\n@include row-is-vertical();\n@include row-no-wrap();\n@include row-is-v-centered();\n\n// Modifier Classes\n.row-is-centered\n.row-is-right\n.row-is-vertical\n.row-no-wrap\n.row-is-v-centered\n      " );
+			text_133 = createText( "\n      " );
+			h3_2 = createElement( 'h3' );
+			text_134 = createText( "Columns" );
+			text_135 = createText( "\n      " );
+			p_3 = createElement( 'p' );
+			text_136 = createText( "Creat horizontal divisions within rows. The integers available for row counts are equal to the number of rows defined by the `col-count` configuration variable. The spaces between rowsis defined by the `gutter` confgiuration variable." );
+			text_137 = createText( "\n      " );
+			pre_2 = createElement( 'pre' );
+			code_2 = createElement( 'code' );
+			text_138 = createText( "\n// Base Mixin\n@include column();\n\n// Base Class\n.col\n\n// Modifier Mixins\n@include column-is($i)\n\n// Modifier Classes\n.col-is-${i}\n.ns-col-is-${i}\n.md-col-is-${i}\n.lg-col-is-${i}\n\n// Adjustment Mixins\n@include is-offset($i);\n@include float(left || right);\n@include flush();\n\n// Adjustment Classes\n.is-offset-{$i}\n.col-is-left\n.col-is-right\n.col-is-flush\n      " );
+			text_139 = createText( "\n\n\n      " );
+			h3_3 = createElement( 'h3' );
+			text_140 = createText( "Leads" );
+			text_141 = createText( "\n      " );
+			p_4 = createElement( 'p' );
+			text_142 = createText( "The idea of leads (/'lɛds'/, like the type of metal) is taken from the typgraphic layouts practiced in hot-metal typesetting. The lead is a strip of metal that is used to create white space between elements. Here, te leads are used to add margin above block elements in multples of the `baseline` variable to maintain consistentn vertical rhythym." );
+			text_143 = createText( "\n      " );
+			p_5 = createElement( 'p' );
+			text_144 = createText( "The integers 1-12 are available for classes." );
+			text_145 = createText( "\n      " );
+			pre_3 = createElement( 'pre' );
+			code_3 = createElement( 'code' );
+			text_146 = createText( "\n// Mixins\n@mixin lead-top();\n@mixin lead-bottom();\n\n// Classes\n.lead-${i}\n.lead-bottom-${i}\n      " );
+			text_150 = createText( "\n\n" );
+			div_3 = createElement( 'div' );
+			h1_1 = createElement( 'h1' );
+			text_151 = createText( "Sample Zone" );
+			this.hydrate();
+		},
+
+		hydrate: function ( nodes ) {
+			div.className = "container";
+			div_1.className = "row";
+			article.className = "col col-is-12";
+			a.href = "#example";
+			section.className = "col col-is-12";
+			div_2.className = "row";
+			section_1.className = "col col-is-12";
+			div_3.className = "flex-grid-sample";
+			div_3.id = "example";
+		},
+
+		mount: function ( target, anchor ) {
+			insertNode( div, target, anchor );
+			appendNode( div_1, div );
+			appendNode( article, div_1 );
+			appendNode( h1, article );
+			appendNode( text, h1 );
+			appendNode( text_1, article );
+			appendNode( p, article );
+			appendNode( text_2, p );
+			appendNode( a, p );
+			appendNode( text_3, a );
+			appendNode( text_4, p );
+			appendNode( text_6, div_1 );
+			appendNode( section, div_1 );
+			appendNode( h2, section );
+			appendNode( text_7, h2 );
+			appendNode( text_8, section );
+			appendNode( table, section );
+			appendNode( thead, table );
+			appendNode( tr, thead );
+			appendNode( th, tr );
+			appendNode( text_9, th );
+			appendNode( text_10, tr );
+			appendNode( th_1, tr );
+			appendNode( text_11, th_1 );
+			appendNode( text_12, tr );
+			appendNode( th_2, tr );
+			appendNode( text_13, th_2 );
+			appendNode( text_16, table );
+			appendNode( tbody, table );
+			appendNode( tr_1, tbody );
+			appendNode( td, tr_1 );
+			appendNode( text_17, td );
+			appendNode( text_18, tr_1 );
+			appendNode( td_1, tr_1 );
+			appendNode( text_19, td_1 );
+			appendNode( text_20, tr_1 );
+			appendNode( td_2, tr_1 );
+			appendNode( text_21, td_2 );
+			appendNode( text_23, tbody );
+			appendNode( tr_2, tbody );
+			appendNode( td_3, tr_2 );
+			appendNode( text_24, td_3 );
+			appendNode( text_25, tr_2 );
+			appendNode( td_4, tr_2 );
+			appendNode( text_26, td_4 );
+			appendNode( text_27, tr_2 );
+			appendNode( td_5, tr_2 );
+			appendNode( text_28, td_5 );
+			appendNode( b, td_5 );
+			appendNode( text_29, b );
+			appendNode( text_30, td_5 );
+			appendNode( text_32, tbody );
+			appendNode( tr_3, tbody );
+			appendNode( td_6, tr_3 );
+			appendNode( text_33, td_6 );
+			appendNode( text_34, tr_3 );
+			appendNode( td_7, tr_3 );
+			appendNode( text_35, td_7 );
+			appendNode( text_36, tr_3 );
+			appendNode( td_8, tr_3 );
+			appendNode( text_37, td_8 );
+			appendNode( b_1, td_8 );
+			appendNode( text_38, b_1 );
+			appendNode( text_39, td_8 );
+			appendNode( text_41, tbody );
+			appendNode( tr_4, tbody );
+			appendNode( td_9, tr_4 );
+			appendNode( text_42, td_9 );
+			appendNode( text_43, tr_4 );
+			appendNode( td_10, tr_4 );
+			appendNode( text_44, td_10 );
+			appendNode( text_45, tr_4 );
+			appendNode( td_11, tr_4 );
+			appendNode( text_46, td_11 );
+			appendNode( b_2, td_11 );
+			appendNode( text_47, b_2 );
+			appendNode( text_48, td_11 );
+			appendNode( text_50, tbody );
+			appendNode( tr_5, tbody );
+			appendNode( td_12, tr_5 );
+			appendNode( text_51, td_12 );
+			appendNode( text_52, tr_5 );
+			appendNode( td_13, tr_5 );
+			appendNode( text_53, td_13 );
+			appendNode( text_54, tr_5 );
+			appendNode( td_14, tr_5 );
+			appendNode( text_55, td_14 );
+			appendNode( b_3, td_14 );
+			appendNode( text_56, b_3 );
+			appendNode( text_57, td_14 );
+			appendNode( text_59, tbody );
+			appendNode( tr_6, tbody );
+			appendNode( td_15, tr_6 );
+			appendNode( text_60, td_15 );
+			appendNode( text_61, tr_6 );
+			appendNode( td_16, tr_6 );
+			appendNode( text_62, td_16 );
+			appendNode( text_63, tr_6 );
+			appendNode( td_17, tr_6 );
+			appendNode( text_64, td_17 );
+			appendNode( b_4, td_17 );
+			appendNode( text_65, b_4 );
+			appendNode( text_66, td_17 );
+			appendNode( text_68, tbody );
+			appendNode( tr_7, tbody );
+			appendNode( td_18, tr_7 );
+			appendNode( text_69, td_18 );
+			appendNode( text_70, tr_7 );
+			appendNode( td_19, tr_7 );
+			appendNode( text_71, td_19 );
+			appendNode( text_72, tr_7 );
+			appendNode( td_20, tr_7 );
+			appendNode( text_73, td_20 );
+			appendNode( text_75, tbody );
+			appendNode( tr_8, tbody );
+			appendNode( td_21, tr_8 );
+			appendNode( text_76, td_21 );
+			appendNode( text_77, tr_8 );
+			appendNode( td_22, tr_8 );
+			appendNode( text_78, td_22 );
+			appendNode( text_79, tr_8 );
+			appendNode( td_23, tr_8 );
+			appendNode( text_80, td_23 );
+			appendNode( text_82, tbody );
+			appendNode( tr_9, tbody );
+			appendNode( td_24, tr_9 );
+			appendNode( text_83, td_24 );
+			appendNode( text_84, tr_9 );
+			appendNode( td_25, tr_9 );
+			appendNode( text_85, td_25 );
+			appendNode( text_86, tr_9 );
+			appendNode( td_26, tr_9 );
+			appendNode( text_87, td_26 );
+			appendNode( text_89, tbody );
+			appendNode( tr_10, tbody );
+			appendNode( td_27, tr_10 );
+			appendNode( text_90, td_27 );
+			appendNode( text_91, tr_10 );
+			appendNode( td_28, tr_10 );
+			appendNode( text_92, td_28 );
+			appendNode( text_93, tr_10 );
+			appendNode( td_29, tr_10 );
+			appendNode( text_94, td_29 );
+			appendNode( text_96, tbody );
+			appendNode( tr_11, tbody );
+			appendNode( td_30, tr_11 );
+			appendNode( text_97, td_30 );
+			appendNode( text_98, tr_11 );
+			appendNode( td_31, tr_11 );
+			appendNode( text_99, td_31 );
+			appendNode( text_100, tr_11 );
+			appendNode( td_32, tr_11 );
+			appendNode( text_101, td_32 );
+			appendNode( text_103, tbody );
+			appendNode( tr_12, tbody );
+			appendNode( td_33, tr_12 );
+			appendNode( text_104, td_33 );
+			appendNode( text_105, tr_12 );
+			appendNode( td_34, tr_12 );
+			appendNode( text_106, td_34 );
+			appendNode( text_107, tr_12 );
+			appendNode( td_35, tr_12 );
+			appendNode( text_108, td_35 );
+			appendNode( text_110, tbody );
+			appendNode( tr_13, tbody );
+			appendNode( td_36, tr_13 );
+			appendNode( text_111, td_36 );
+			appendNode( text_112, tr_13 );
+			appendNode( td_37, tr_13 );
+			appendNode( text_113, td_37 );
+			appendNode( text_114, tr_13 );
+			appendNode( td_38, tr_13 );
+			appendNode( text_115, td_38 );
+			appendNode( text_121, div );
+			appendNode( div_2, div );
+			appendNode( section_1, div_2 );
+			appendNode( h3, section_1 );
+			appendNode( text_122, h3 );
+			appendNode( text_123, section_1 );
+			appendNode( p_1, section_1 );
+			appendNode( text_124, p_1 );
+			appendNode( text_125, section_1 );
+			appendNode( pre, section_1 );
+			appendNode( code, pre );
+			appendNode( text_126, code );
+			appendNode( text_127, section_1 );
+			appendNode( h3_1, section_1 );
+			appendNode( text_128, h3_1 );
+			appendNode( text_129, section_1 );
+			appendNode( p_2, section_1 );
+			appendNode( text_130, p_2 );
+			appendNode( text_131, section_1 );
+			appendNode( pre_1, section_1 );
+			appendNode( code_1, pre_1 );
+			appendNode( text_132, code_1 );
+			appendNode( text_133, section_1 );
+			appendNode( h3_2, section_1 );
+			appendNode( text_134, h3_2 );
+			appendNode( text_135, section_1 );
+			appendNode( p_3, section_1 );
+			appendNode( text_136, p_3 );
+			appendNode( text_137, section_1 );
+			appendNode( pre_2, section_1 );
+			appendNode( code_2, pre_2 );
+			appendNode( text_138, code_2 );
+			appendNode( text_139, section_1 );
+			appendNode( h3_3, section_1 );
+			appendNode( text_140, h3_3 );
+			appendNode( text_141, section_1 );
+			appendNode( p_4, section_1 );
+			appendNode( text_142, p_4 );
+			appendNode( text_143, section_1 );
+			appendNode( p_5, section_1 );
+			appendNode( text_144, p_5 );
+			appendNode( text_145, section_1 );
+			appendNode( pre_3, section_1 );
+			appendNode( code_3, pre_3 );
+			appendNode( text_146, code_3 );
+			insertNode( text_150, target, anchor );
+			insertNode( div_3, target, anchor );
+			appendNode( h1_1, div_3 );
+			appendNode( text_151, h1_1 );
+		},
+
+		unmount: function () {
+			detachNode( div );
+			detachNode( text_150 );
+			detachNode( div_3 );
+		},
+
+		destroy: noop
+	};
+}
+
+function _06_Flex_Grid ( options ) {
+	options = options || {};
+	this._state = options.data || {};
+
+	this._observers = {
+		pre: Object.create( null ),
+		post: Object.create( null )
+	};
+
+	this._handlers = Object.create( null );
+
+	this._root = options._root || this;
+	this._yield = options._yield;
+
+	this._fragment = create_main_fragment$9( this._state, this );
+
+	if ( options.target ) {
+		this._fragment.create();
+		this._fragment.mount( options.target, null );
+	}
+}
+
+assign( _06_Flex_Grid.prototype, proto );
+
+_06_Flex_Grid.prototype._set = function _set ( newState ) {
+	var oldState = this._state;
+	this._state = assign( {}, oldState, newState );
+	dispatchObservers( this, this._observers.pre, newState, oldState );
+	dispatchObservers( this, this._observers.post, newState, oldState );
+};
+
+function create_main_fragment$10 ( state, component ) {
+	var div, div_1, article, h1, text, text_1, p, text_2, text_4, section, h2, text_5, text_6, table, thead, tr, th, text_7, text_8, th_1, text_9, text_10, th_2, text_11, text_14, tbody, tr_1, td, text_15, text_16, td_1, text_17, text_18, td_2, text_19, text_21, tr_2, td_3, text_22, text_23, td_4, text_24, text_25, td_5, text_26, text_28, tr_3, td_6, text_29, text_30, td_7, text_31, text_32, td_8, text_33, text_35, tr_4, td_9, text_36, text_37, td_10, text_38, text_39, td_11, text_40, text_42, tr_5, td_12, text_43, text_44, td_13, text_45, text_46, td_14, text_47, text_49, tr_6, td_15, text_50, text_51, td_16, text_52, text_53, td_17, text_54, text_56, tr_7, td_18, text_57, text_58, td_19, text_59, text_60, td_20, text_61, text_67, div_2, section_1, h2_1, text_68, text_69, p_1, text_70, text_71, ul, li, text_72, li_1, text_73, li_2, text_74, li_3, text_75, li_4, text_76, li_5, text_77, li_6, text_78, text_80, section_2, h3, text_81, text_82, p_2, text_83, text_84, pre, code, text_85, text_87, section_3, h3_1, text_88, text_89, p_3, text_90, pre_1, code_1, text_91, text_93, section_4, h3_2, text_94, text_95, p_4, text_96, text_97, pre_2, code_2, text_98, text_100, section_5, h3_3, text_101, text_102, p_5, text_103, text_104, pre_3, code_3, text_105, text_107, section_6, h3_4, text_108, text_109, p_6, text_110, text_111, pre_4, code_4, text_112, text_114, section_7, h3_5, text_115, text_116, p_7, text_117, text_118, pre_5, code_5, text_119, text_121, section_8, h3_6, text_122, text_123, p_8, text_124, text_125, pre_6, code_6, text_126;
+
+	return {
+		create: function () {
+			div = createElement( 'div' );
+			div_1 = createElement( 'div' );
+			article = createElement( 'article' );
+			h1 = createElement( 'h1' );
+			text = createText( "Type" );
+			text_1 = createText( "\n      " );
+			p = createElement( 'p' );
+			text_2 = createText( "The type system is the real meat of the situation. Using a modular double stranded type scale with all sorts of good shit." );
+			text_4 = createText( "\n    " );
+			section = createElement( 'section' );
+			h2 = createElement( 'h2' );
+			text_5 = createText( "Relevant Configuration:" );
+			text_6 = createText( "\n      " );
+			table = createElement( 'table' );
+			thead = createElement( 'thead' );
+			tr = createElement( 'tr' );
+			th = createElement( 'th' );
+			text_7 = createText( "Variable" );
+			text_8 = createText( "\n            " );
+			th_1 = createElement( 'th' );
+			text_9 = createText( "Default" );
+			text_10 = createText( "\n            " );
+			th_2 = createElement( 'th' );
+			text_11 = createText( "What it do" );
+			text_14 = createText( "\n        " );
+			tbody = createElement( 'tbody' );
+			tr_1 = createElement( 'tr' );
+			td = createElement( 'td' );
+			text_15 = createText( "$rem-size" );
+			text_16 = createText( "\n            " );
+			td_1 = createElement( 'td' );
+			text_17 = createText( "16px" );
+			text_18 = createText( "\n            " );
+			td_2 = createElement( 'td' );
+			text_19 = createText( "Defines the basic size from which all others are derived." );
+			text_21 = createText( "\n          " );
+			tr_2 = createElement( 'tr' );
+			td_3 = createElement( 'td' );
+			text_22 = createText( "$ratio" );
+			text_23 = createText( "\n            " );
+			td_4 = createElement( 'td' );
+			text_24 = createText( "1.618" );
+			text_25 = createText( "\n            " );
+			td_5 = createElement( 'td' );
+			text_26 = createText( "Establishes a ratio for sizing along the typographic scale." );
+			text_28 = createText( "\n          " );
+			tr_3 = createElement( 'tr' );
+			td_6 = createElement( 'td' );
+			text_29 = createText( "$body-size" );
+			text_30 = createText( "\n            " );
+			td_7 = createElement( 'td' );
+			text_31 = createText( "1rem" );
+			text_32 = createText( "\n            " );
+			td_8 = createElement( 'td' );
+			text_33 = createText( "Defines the default size of body type." );
+			text_35 = createText( "\n          " );
+			tr_4 = createElement( 'tr' );
+			td_9 = createElement( 'td' );
+			text_36 = createText( "$small-size" );
+			text_37 = createText( "\n            " );
+			td_10 = createElement( 'td' );
+			text_38 = createText( "0.85rem" );
+			text_39 = createText( "\n            " );
+			td_11 = createElement( 'td' );
+			text_40 = createText( "Defines a secondary, smaller size for type. Is used to create a double stranded typographic scale." );
+			text_42 = createText( "\n          " );
+			tr_5 = createElement( 'tr' );
+			td_12 = createElement( 'td' );
+			text_43 = createText( "$baseline" );
+			text_44 = createText( "\n            " );
+			td_13 = createElement( 'td' );
+			text_45 = createText( "0.25rem" );
+			text_46 = createText( "\n            " );
+			td_14 = createElement( 'td' );
+			text_47 = createText( "Establishes the baseline grid." );
+			text_49 = createText( "\n          " );
+			tr_6 = createElement( 'tr' );
+			td_15 = createElement( 'td' );
+			text_50 = createText( "$leading" );
+			text_51 = createText( "\n            " );
+			td_16 = createElement( 'td' );
+			text_52 = createText( "5*$baseline" );
+			text_53 = createText( "\n            " );
+			td_17 = createElement( 'td' );
+			text_54 = createText( "Establishes the default leading for type." );
+			text_56 = createText( "\n          " );
+			tr_7 = createElement( 'tr' );
+			td_18 = createElement( 'td' );
+			text_57 = createText( "$indent" );
+			text_58 = createText( "\n            " );
+			td_19 = createElement( 'td' );
+			text_59 = createText( "1em" );
+			text_60 = createText( "\n            " );
+			td_20 = createElement( 'td' );
+			text_61 = createText( "Establishes the standard indent to use when applicable." );
+			text_67 = createText( "\n  " );
+			div_2 = createElement( 'div' );
+			section_1 = createElement( 'section' );
+			h2_1 = createElement( 'h2' );
+			text_68 = createText( "Typographic System" );
+			text_69 = createText( "\n      " );
+			p_1 = createElement( 'p' );
+			text_70 = createText( "There are a couple of moving parts here:" );
+			text_71 = createText( "\n      " );
+			ul = createElement( 'ul' );
+			li = createElement( 'li' );
+			text_72 = createText( "Font Styles" );
+			li_1 = createElement( 'li' );
+			text_73 = createText( "Font Weights" );
+			li_2 = createElement( 'li' );
+			text_74 = createText( "Leading" );
+			li_3 = createElement( 'li' );
+			text_75 = createText( "Tracking" );
+			li_4 = createElement( 'li' );
+			text_76 = createText( "Word Spacing" );
+			li_5 = createElement( 'li' );
+			text_77 = createText( "Alignment" );
+			li_6 = createElement( 'li' );
+			text_78 = createText( "Type Scale" );
+			text_80 = createText( "\n    " );
+			section_2 = createElement( 'section' );
+			h3 = createElement( 'h3' );
+			text_81 = createText( "Font Styles" );
+			text_82 = createText( "\n      " );
+			p_2 = createElement( 'p' );
+			text_83 = createText( "Here we borrow from classical print typography terminalogy, rather than the not quite accurate web aproach." );
+			text_84 = createText( "\n      " );
+			pre = createElement( 'pre' );
+			code = createElement( 'code' );
+			text_85 = createText( "\n// Mixins\n@mixin font-roman()\n@mixin font-italic()\n\n// Classes\n.txt-roman\n.txt-italic\n      " );
+			text_87 = createText( "\n\n    " );
+			section_3 = createElement( 'section' );
+			h3_1 = createElement( 'h3' );
+			text_88 = createText( "Font Weights" );
+			text_89 = createText( "\n      " );
+			p_3 = createElement( 'p' );
+			text_90 = createText( "\n      " );
+			pre_1 = createElement( 'pre' );
+			code_1 = createElement( 'code' );
+			text_91 = createText( "\n// Mixin\n@include font-weight(100 || 200 || 300 || 400 || 500 || 600 || 700 || 800)\n\n// Classes\n.txt-thin\n.txt-light\n.txt-regular\n.txt-medium\n.txt-demi\n.txt-bold\n.txt-black\n\n// Responsive Classes\n.ns-txt-${weight}\n.md-txt-${weight}\n.lg-txt-${weight}\n      " );
+			text_93 = createText( "\n    " );
+			section_4 = createElement( 'section' );
+			h3_2 = createElement( 'h3' );
+			text_94 = createText( "Leading" );
+			text_95 = createText( "\n      " );
+			p_4 = createElement( 'p' );
+			text_96 = createText( "Again, refernce the pieces of metal that sit between lines of type in a letterpress layout. This defines the light height of a block of text. Integers are available from 1-12." );
+			text_97 = createText( "\n      " );
+			pre_2 = createElement( 'pre' );
+			code_2 = createElement( 'code' );
+			text_98 = createText( "\n// Mixin\n@include leading($i)\n\n// Classes\n.txt-lead-${i}\n\n// Responsive Classses\n.ns-txt-lead-${i}\n.md-txt-lead-${i}\n.lg-txt-lead-${i}\n      " );
+			text_100 = createText( "\n\n    " );
+			section_5 = createElement( 'section' );
+			h3_3 = createElement( 'h3' );
+			text_101 = createText( "Tracking" );
+			text_102 = createText( "\n      " );
+			p_5 = createElement( 'p' );
+			text_103 = createText( "Tracking is the space between letters. Some typographid desicisions benefit from a tight, negative tracking while others (like big, bold sans) can look amazing widely tracked out. The mixin takes an integer, and assigns letterspacing equal to `i*0.001em`" );
+			text_104 = createText( "\n      " );
+			pre_3 = createElement( 'pre' );
+			code_3 = createElement( 'code' );
+			text_105 = createText( "\n// Mixin\n@include tracking($i)\n\n// Classes\n.txt-tracked-wide  // @include tracking(20)\n.txt-tracked-tight // @include tracking(-10)\n\n// Responsive Classes\n.ns-txt-tracked-${wide || tight}\n.md-txt-tracked-${wide || tight}\n.lg-txt-tracked-${wide || tight}\n      " );
+			text_107 = createText( "\n\n    " );
+			section_6 = createElement( 'section' );
+			h3_4 = createElement( 'h3' );
+			text_108 = createText( "Word Spacing" );
+			text_109 = createText( "\n      " );
+			p_6 = createElement( 'p' );
+			text_110 = createText( "The space between the words. Used sparingly, but can be essentiall at times.  The mixin takes an integer, and assigns word spacing equal to `i*0.001em`" );
+			text_111 = createText( "\n      " );
+			pre_4 = createElement( 'pre' );
+			code_4 = createElement( 'code' );
+			text_112 = createText( "\n// Mixin\n@include word-spacing($i)\n\n// Classes\n.txt-spaced-wide  // @include word-spacing(20)\n.txt-spaced-tight // @include word-spacing(-10)\n\n// Responsive Classes\n.ns-txt-spaced-${wide || tight}\n.md-txt-spaced-${wide || tight}\n.lg-txt-spaced-${wide || tight}\n      " );
+			text_114 = createText( "\n\n    " );
+			section_7 = createElement( 'section' );
+			h3_5 = createElement( 'h3' );
+			text_115 = createText( "Alignment" );
+			text_116 = createText( "\n      " );
+			p_7 = createElement( 'p' );
+			text_117 = createText( "Left, right, center. Simple stuff! An addtion option of `inline` assign the display property to inline, useful for textual elements that have a default display of `block`, like headers" );
+			text_118 = createText( "\n\n      " );
+			pre_5 = createElement( 'pre' );
+			code_5 = createElement( 'code' );
+			text_119 = createText( "\n// Mixins\n@include text-center()\n@include text-left()\n@include text-right()\n@include text-inline()\n\n// Classes\n.txt-center\n.txt-left\n.txt-right\n.txt-inline\n\n// Responsive Classes\n.ns-txt-${center || left || right || inline}\n.md-txt-${center || left || right || inline}\n.lg-txt-${center || left || right || inline}\n      " );
+			text_121 = createText( "\n    " );
+			section_8 = createElement( 'section' );
+			h3_6 = createElement( 'h3' );
+			text_122 = createText( "Type Scale" );
+			text_123 = createText( "\n      " );
+			p_8 = createElement( 'p' );
+			text_124 = createText( "Creates 14 or 15 steps along a double stranded typographic scale based on the body font size, the small font size, and the ratio. Classes availble from -3 to 12." );
+			text_125 = createText( "\n      " );
+			pre_6 = createElement( 'pre' );
+			code_6 = createElement( 'code' );
+			text_126 = createText( "\n// Mixin\n@include font-size($i)\n\n// Class\n.txt-size-${i}\n\n// Responsive Classes\n.ns-txt-size-${i}\n.md-txt-size-${i}\n.lg-txt-size-${i}\n      " );
+			this.hydrate();
+		},
+
+		hydrate: function ( nodes ) {
+			div.className = "container";
+			div_1.className = "row";
+			article.className = "col col-is-12";
+			section.className = "col col-is-12";
+			div_2.className = "row";
+			section_1.className = "col col-is-12";
+			section_2.className = "col col-is-12";
+			section_3.className = "col col-is-12";
+			section_4.className = "col-col-is-12";
+			section_5.className = "col col-is-12";
+			section_6.className = "col col-is-12";
+			section_7.className = "col col-is-12";
+			section_8.className = "col col-is-12";
+		},
+
+		mount: function ( target, anchor ) {
+			insertNode( div, target, anchor );
+			appendNode( div_1, div );
+			appendNode( article, div_1 );
+			appendNode( h1, article );
+			appendNode( text, h1 );
+			appendNode( text_1, article );
+			appendNode( p, article );
+			appendNode( text_2, p );
+			appendNode( text_4, div_1 );
+			appendNode( section, div_1 );
+			appendNode( h2, section );
+			appendNode( text_5, h2 );
+			appendNode( text_6, section );
+			appendNode( table, section );
+			appendNode( thead, table );
+			appendNode( tr, thead );
+			appendNode( th, tr );
+			appendNode( text_7, th );
+			appendNode( text_8, tr );
+			appendNode( th_1, tr );
+			appendNode( text_9, th_1 );
+			appendNode( text_10, tr );
+			appendNode( th_2, tr );
+			appendNode( text_11, th_2 );
+			appendNode( text_14, table );
+			appendNode( tbody, table );
+			appendNode( tr_1, tbody );
+			appendNode( td, tr_1 );
+			appendNode( text_15, td );
+			appendNode( text_16, tr_1 );
+			appendNode( td_1, tr_1 );
+			appendNode( text_17, td_1 );
+			appendNode( text_18, tr_1 );
+			appendNode( td_2, tr_1 );
+			appendNode( text_19, td_2 );
+			appendNode( text_21, tbody );
+			appendNode( tr_2, tbody );
+			appendNode( td_3, tr_2 );
+			appendNode( text_22, td_3 );
+			appendNode( text_23, tr_2 );
+			appendNode( td_4, tr_2 );
+			appendNode( text_24, td_4 );
+			appendNode( text_25, tr_2 );
+			appendNode( td_5, tr_2 );
+			appendNode( text_26, td_5 );
+			appendNode( text_28, tbody );
+			appendNode( tr_3, tbody );
+			appendNode( td_6, tr_3 );
+			appendNode( text_29, td_6 );
+			appendNode( text_30, tr_3 );
+			appendNode( td_7, tr_3 );
+			appendNode( text_31, td_7 );
+			appendNode( text_32, tr_3 );
+			appendNode( td_8, tr_3 );
+			appendNode( text_33, td_8 );
+			appendNode( text_35, tbody );
+			appendNode( tr_4, tbody );
+			appendNode( td_9, tr_4 );
+			appendNode( text_36, td_9 );
+			appendNode( text_37, tr_4 );
+			appendNode( td_10, tr_4 );
+			appendNode( text_38, td_10 );
+			appendNode( text_39, tr_4 );
+			appendNode( td_11, tr_4 );
+			appendNode( text_40, td_11 );
+			appendNode( text_42, tbody );
+			appendNode( tr_5, tbody );
+			appendNode( td_12, tr_5 );
+			appendNode( text_43, td_12 );
+			appendNode( text_44, tr_5 );
+			appendNode( td_13, tr_5 );
+			appendNode( text_45, td_13 );
+			appendNode( text_46, tr_5 );
+			appendNode( td_14, tr_5 );
+			appendNode( text_47, td_14 );
+			appendNode( text_49, tbody );
+			appendNode( tr_6, tbody );
+			appendNode( td_15, tr_6 );
+			appendNode( text_50, td_15 );
+			appendNode( text_51, tr_6 );
+			appendNode( td_16, tr_6 );
+			appendNode( text_52, td_16 );
+			appendNode( text_53, tr_6 );
+			appendNode( td_17, tr_6 );
+			appendNode( text_54, td_17 );
+			appendNode( text_56, tbody );
+			appendNode( tr_7, tbody );
+			appendNode( td_18, tr_7 );
+			appendNode( text_57, td_18 );
+			appendNode( text_58, tr_7 );
+			appendNode( td_19, tr_7 );
+			appendNode( text_59, td_19 );
+			appendNode( text_60, tr_7 );
+			appendNode( td_20, tr_7 );
+			appendNode( text_61, td_20 );
+			appendNode( text_67, div );
+			appendNode( div_2, div );
+			appendNode( section_1, div_2 );
+			appendNode( h2_1, section_1 );
+			appendNode( text_68, h2_1 );
+			appendNode( text_69, section_1 );
+			appendNode( p_1, section_1 );
+			appendNode( text_70, p_1 );
+			appendNode( text_71, section_1 );
+			appendNode( ul, section_1 );
+			appendNode( li, ul );
+			appendNode( text_72, li );
+			appendNode( li_1, ul );
+			appendNode( text_73, li_1 );
+			appendNode( li_2, ul );
+			appendNode( text_74, li_2 );
+			appendNode( li_3, ul );
+			appendNode( text_75, li_3 );
+			appendNode( li_4, ul );
+			appendNode( text_76, li_4 );
+			appendNode( li_5, ul );
+			appendNode( text_77, li_5 );
+			appendNode( li_6, ul );
+			appendNode( text_78, li_6 );
+			appendNode( text_80, div_2 );
+			appendNode( section_2, div_2 );
+			appendNode( h3, section_2 );
+			appendNode( text_81, h3 );
+			appendNode( text_82, section_2 );
+			appendNode( p_2, section_2 );
+			appendNode( text_83, p_2 );
+			appendNode( text_84, section_2 );
+			appendNode( pre, section_2 );
+			appendNode( code, pre );
+			appendNode( text_85, code );
+			appendNode( text_87, div_2 );
+			appendNode( section_3, div_2 );
+			appendNode( h3_1, section_3 );
+			appendNode( text_88, h3_1 );
+			appendNode( text_89, section_3 );
+			appendNode( p_3, section_3 );
+			appendNode( text_90, section_3 );
+			appendNode( pre_1, section_3 );
+			appendNode( code_1, pre_1 );
+			appendNode( text_91, code_1 );
+			appendNode( text_93, div_2 );
+			appendNode( section_4, div_2 );
+			appendNode( h3_2, section_4 );
+			appendNode( text_94, h3_2 );
+			appendNode( text_95, section_4 );
+			appendNode( p_4, section_4 );
+			appendNode( text_96, p_4 );
+			appendNode( text_97, section_4 );
+			appendNode( pre_2, section_4 );
+			appendNode( code_2, pre_2 );
+			appendNode( text_98, code_2 );
+			appendNode( text_100, div_2 );
+			appendNode( section_5, div_2 );
+			appendNode( h3_3, section_5 );
+			appendNode( text_101, h3_3 );
+			appendNode( text_102, section_5 );
+			appendNode( p_5, section_5 );
+			appendNode( text_103, p_5 );
+			appendNode( text_104, section_5 );
+			appendNode( pre_3, section_5 );
+			appendNode( code_3, pre_3 );
+			appendNode( text_105, code_3 );
+			appendNode( text_107, div_2 );
+			appendNode( section_6, div_2 );
+			appendNode( h3_4, section_6 );
+			appendNode( text_108, h3_4 );
+			appendNode( text_109, section_6 );
+			appendNode( p_6, section_6 );
+			appendNode( text_110, p_6 );
+			appendNode( text_111, section_6 );
+			appendNode( pre_4, section_6 );
+			appendNode( code_4, pre_4 );
+			appendNode( text_112, code_4 );
+			appendNode( text_114, div_2 );
+			appendNode( section_7, div_2 );
+			appendNode( h3_5, section_7 );
+			appendNode( text_115, h3_5 );
+			appendNode( text_116, section_7 );
+			appendNode( p_7, section_7 );
+			appendNode( text_117, p_7 );
+			appendNode( text_118, section_7 );
+			appendNode( pre_5, section_7 );
+			appendNode( code_5, pre_5 );
+			appendNode( text_119, code_5 );
+			appendNode( text_121, div_2 );
+			appendNode( section_8, div_2 );
+			appendNode( h3_6, section_8 );
+			appendNode( text_122, h3_6 );
+			appendNode( text_123, section_8 );
+			appendNode( p_8, section_8 );
+			appendNode( text_124, p_8 );
+			appendNode( text_125, section_8 );
+			appendNode( pre_6, section_8 );
+			appendNode( code_6, pre_6 );
+			appendNode( text_126, code_6 );
+		},
+
+		unmount: function () {
+			detachNode( div );
+		},
+
+		destroy: noop
+	};
+}
+
+function _07_Type ( options ) {
+	options = options || {};
+	this._state = options.data || {};
+
+	this._observers = {
+		pre: Object.create( null ),
+		post: Object.create( null )
+	};
+
+	this._handlers = Object.create( null );
+
+	this._root = options._root || this;
+	this._yield = options._yield;
+
+	this._fragment = create_main_fragment$10( this._state, this );
+
+	if ( options.target ) {
+		this._fragment.create();
+		this._fragment.mount( options.target, null );
+	}
+}
+
+assign( _07_Type.prototype, proto );
+
+_07_Type.prototype._set = function _set ( newState ) {
+	var oldState = this._state;
+	this._state = assign( {}, oldState, newState );
+	dispatchObservers( this, this._observers.pre, newState, oldState );
+	dispatchObservers( this, this._observers.post, newState, oldState );
+};
+
 var template = (function () {
 const router = createRouter({
   '/': Home,
+  '/configuration': _04_Configuration,
+  '/media-queries': _05_Media_Queries,
+  '/grid': _06_Flex_Grid,
+  '/type': _07_Type,
   '/404': _404
 });
-
-console.log(router);
 
 return {
   oncreate() {
     router.start(window.location, window.document.querySelector('#view'));
   },
-
   ondestroy() {
     router.teardown();
   },
-
   data () {
     return {
       dynamic: 'dynamic data'

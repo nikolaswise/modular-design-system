@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <article class="col col-is-12">
+      <h1>Media Queries</h1>
+      <p>Dead simple mixins for the masses. Is used extensively in other pojects</p>
+    </article>
+    <section class="col col-is-12">
+      <h2>Relevant configuation:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Default</th>
+            <th>What it do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$small </td>
+            <td>30rem</td>
+            <td>When to switch out of <b>small</b> sizing.</td>
+          </tr>
+          <tr>
+            <td>$large </td>
+            <td>60rem</td>
+            <td>When to switch out of <b>medium</b> sizing.</td>
+          </tr>
+          <tr>
+            <td>$max-width</td>
+            <td>60rem</td>
+            <td>The maximum width of the content grid.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="col-is-12">
+      <h2>Mixins:</h2>
+      <pre><code>
+@include not-small() {... styles to apply above small width}
+
+@include medium-break() {... styles to apply at between small and large widths}
+
+@include large-break() {... styles to apply above large widths}
+      </code></pre>
+    </section>
+  </div>
+</div>

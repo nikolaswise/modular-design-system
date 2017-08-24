@@ -1,0 +1,200 @@
+<div class="container">
+  <div class="row">
+    <article class="col col-is-12">
+      <h1>Type</h1>
+      <p>The type system is the real meat of the situation. Using a modular double stranded type scale with all sorts of good shit.</p>
+    </article>
+    <section class="col col-is-12">
+      <h2>Relevant Configuration:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Default</th>
+            <th>What it do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$rem-size</td>
+            <td>16px</td>
+            <td>Defines the basic size from which all others are derived.</td>
+          </tr>
+          <tr>
+            <td>$ratio</td>
+            <td>1.618</td>
+            <td>Establishes a ratio for sizing along the typographic scale.</td>
+          </tr>
+          <tr>
+            <td>$body-size</td>
+            <td>1rem</td>
+            <td>Defines the default size of body type.</td>
+          </tr>
+          <tr>
+            <td>$small-size</td>
+            <td>0.85rem</td>
+            <td>Defines a secondary, smaller size for type. Is used to create a double stranded typographic scale.</td>
+          </tr>
+          <tr>
+            <td>$baseline</td>
+            <td>0.25rem</td>
+            <td>Establishes the baseline grid.</td>
+          </tr>
+          <tr>
+            <td>$leading</td>
+            <td>5*$baseline</td>
+            <td>Establishes the default leading for type.</td>
+          </tr>
+          <tr>
+            <td>$indent</td>
+            <td>1em</td>
+            <td>Establishes the standard indent to use when applicable.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <div class="row">
+    <section class="col col-is-12">
+      <h2>Typographic System</h2>
+      <p>There are a couple of moving parts here:</p>
+      <ul>
+        <li>Font Styles</li>
+        <li>Font Weights</li>
+        <li>Leading</li>
+        <li>Tracking</li>
+        <li>Word Spacing</li>
+        <li>Alignment</li>
+        <li>Type Scale</li>
+      </ul>
+    </section>
+    <section class="col col-is-12">
+      <h3>Font Styles</h3>
+      <p>Here we borrow from classical print typography terminalogy, rather than the not quite accurate web aproach.</p>
+      <pre><code>
+// Mixins
+@mixin font-roman()
+@mixin font-italic()
+
+// Classes
+.txt-roman
+.txt-italic
+      </code></pre>
+    </section>
+
+    <section class="col col-is-12">
+      <h3>Font Weights</h3>
+      <p></p>
+      <pre><code>
+// Mixin
+@include font-weight(100 || 200 || 300 || 400 || 500 || 600 || 700 || 800)
+
+// Classes
+.txt-thin
+.txt-light
+.txt-regular
+.txt-medium
+.txt-demi
+.txt-bold
+.txt-black
+
+// Responsive Classes
+.ns-txt-${weight}
+.md-txt-${weight}
+.lg-txt-${weight}
+      </code></pre>
+    </section>
+    <section class="col-col-is-12">
+      <h3>Leading</h3>
+      <p>Again, refernce the pieces of metal that sit between lines of type in a letterpress layout. This defines the light height of a block of text. Integers are available from 1-12.</p>
+      <pre><code>
+// Mixin
+@include leading($i)
+
+// Classes
+.txt-lead-${i}
+
+// Responsive Classses
+.ns-txt-lead-${i}
+.md-txt-lead-${i}
+.lg-txt-lead-${i}
+      </code></pre>
+    </section>
+
+    <section class="col col-is-12">
+      <h3>Tracking</h3>
+      <p>Tracking is the space between letters. Some typographid desicisions benefit from a tight, negative tracking while others (like big, bold sans) can look amazing widely tracked out. The mixin takes an integer, and assigns letterspacing equal to `i*0.001em`</p>
+      <pre><code>
+// Mixin
+@include tracking($i)
+
+// Classes
+.txt-tracked-wide  // @include tracking(20)
+.txt-tracked-tight // @include tracking(-10)
+
+// Responsive Classes
+.ns-txt-tracked-${wide || tight}
+.md-txt-tracked-${wide || tight}
+.lg-txt-tracked-${wide || tight}
+      </code></pre>
+    </section>
+
+    <section class="col col-is-12">
+      <h3>Word Spacing</h3>
+      <p>The space between the words. Used sparingly, but can be essentiall at times.  The mixin takes an integer, and assigns word spacing equal to `i*0.001em`</p>
+      <pre><code>
+// Mixin
+@include word-spacing($i)
+
+// Classes
+.txt-spaced-wide  // @include word-spacing(20)
+.txt-spaced-tight // @include word-spacing(-10)
+
+// Responsive Classes
+.ns-txt-spaced-${wide || tight}
+.md-txt-spaced-${wide || tight}
+.lg-txt-spaced-${wide || tight}
+      </code></pre>
+    </section>
+
+    <section class="col col-is-12">
+      <h3>Alignment</h3>
+      <p>Left, right, center. Simple stuff! An addtion option of `inline` assign the display property to inline, useful for textual elements that have a default display of `block`, like headers</p>
+
+      <pre><code>
+// Mixins
+@include text-center()
+@include text-left()
+@include text-right()
+@include text-inline()
+
+// Classes
+.txt-center
+.txt-left
+.txt-right
+.txt-inline
+
+// Responsive Classes
+.ns-txt-${center || left || right || inline}
+.md-txt-${center || left || right || inline}
+.lg-txt-${center || left || right || inline}
+      </code></pre>
+    </section>
+    <section class="col col-is-12">
+      <h3>Type Scale</h3>
+      <p>Creates 14 or 15 steps along a double stranded typographic scale based on the body font size, the small font size, and the ratio. Classes availble from -3 to 12.</p>
+      <pre><code>
+// Mixin
+@include font-size($i)
+
+// Class
+.txt-size-${i}
+
+// Responsive Classes
+.ns-txt-size-${i}
+.md-txt-size-${i}
+.lg-txt-size-${i}
+      </code></pre>
+    </section>
+  </div>
+</div>

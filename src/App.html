@@ -7,31 +7,39 @@ import createRouter from './services/createRouter';
 // Components
 import Home from './components/Home.html';
 import NotFound from './components/404.html';
+import Article from './components/Article.html';
+import Configuration from './components/04-Configuration.html';
+import MediaQueries from './components/05-Media-Queries.html';
+import FlexGrid from './components/06-Flex-Grid.html';
+import Type from './components/07-Type.html';
 
 const router = createRouter({
   '/': Home,
+  '/configuration': Configuration,
+  '/media-queries': MediaQueries,
+  '/grid': FlexGrid,
+  '/type': Type,
   '/404': NotFound
 });
-
-console.log(router)
 
 export default {
   oncreate() {
     router.start(window.location, window.document.querySelector('#view'));
   },
-
   ondestroy() {
     router.teardown();
   },
-
   data () {
     return {
       dynamic: 'dynamic data'
     }
   },
-
   components: {
     Home,
+    Article,
+    Configuration,
+    MediaQueries,
+    FlexGrid,
     NotFound
   }
 }

@@ -1,0 +1,170 @@
+<div class="container">
+  <div class="row">
+    <article class="col col-is-12">
+      <h1>Flex Grid</h1>
+      <p>The power of grids systems the joy of flexbox. Peep the <a href="#example">example</a> below to see it in action.</p>
+    </article>
+    <section class="col col-is-12">
+      <h2>Relevant Configuration:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Default</th>
+            <th>What it do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$baseline</td>
+            <td>0.25rem</td>
+            <td>Establishes the baseline grid.</td>
+          </tr>
+          <tr>
+            <td>$container-ratio</td>
+            <td>11/12</td>
+            <td>Defines the proportion of grid width to screen width at <b>small</b> screen sizes.</td>
+          </tr>
+          <tr>
+            <td>$container-ratio-medium</td>
+            <td>10/12</td>
+            <td>Defines the proportion of grid width to screen width at <b>medium</b> screen sizes.</td>
+          </tr>
+          <tr>
+            <td>$container-ratio-large</td>
+            <td>8/12</td>
+            <td>Defines the proportion of grid width to screen width at <b>large</b> screen sizes.</td>
+          </tr>
+          <tr>
+            <td>$small </td>
+            <td>30rem</td>
+            <td>When to switch out of <b>small</b> sizing.</td>
+          </tr>
+          <tr>
+            <td>$large </td>
+            <td>60rem</td>
+            <td>When to switch out of <b>medium</b> sizing.</td>
+          </tr>
+          <tr>
+            <td>$max-width</td>
+            <td>60rem</td>
+            <td>The maximum width of the content grid.</td>
+          </tr>
+          <tr>
+            <td>$gutter</td>
+            <td>4%</td>
+            <td>The width of gutters between columns.</td>
+          </tr>
+          <tr>
+            <td>$col-count</td>
+            <td>12</td>
+            <td>The number of columns to build the grid with.</td>
+          </tr>
+          <tr>
+            <td>$padding-x</td>
+            <td>$gutter</td>
+            <td>The default padding of columns on the x-axis.</td>
+          </tr>
+          <tr>
+            <td>$padding-y</td>
+            <td>$baseline</td>
+            <td>The default padding of columns on the y-axis.</td>
+          </tr>
+          <tr>
+            <td>$padding-outer-x</td>
+            <td>$gutter / 2</td>
+            <td>The default padding of outside columns on the x-axis.</td>
+          </tr>
+          <tr>
+            <td>$padding-outer-y</td>
+            <td>$baseline</td>
+            <td>The default padding of outside columns on the y-axis.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  <div class="row">
+    <section class="col col-is-12">
+      <h3>Container</h3>
+      <p>Contains the grid to the ratios defined by `contiainer-ratio-x` and `max-width` configutation variables.</p>
+      <pre><code>
+// Mixin
+@inlude container()
+
+// Class
+.container
+      </code></pre>
+      <h3>Row</h3>
+      <p>Defines discreet vertical sections.</p>
+      <pre><code>
+// Base Mixin
+@include row();
+
+// Base Class
+.row
+
+// Modifier Mixins
+@include row-is-centered();
+@include row-is-right();
+@include row-is-vertical();
+@include row-no-wrap();
+@include row-is-v-centered();
+
+// Modifier Classes
+.row-is-centered
+.row-is-right
+.row-is-vertical
+.row-no-wrap
+.row-is-v-centered
+      </code></pre>
+      <h3>Columns</h3>
+      <p>Creat horizontal divisions within rows. The integers available for row counts are equal to the number of rows defined by the `col-count` configuration variable. The spaces between rowsis defined by the `gutter` confgiuration variable.</p>
+      <pre><code>
+// Base Mixin
+@include column();
+
+// Base Class
+.col
+
+// Modifier Mixins
+@include column-is($i)
+
+// Modifier Classes
+.col-is-${i}
+.ns-col-is-${i}
+.md-col-is-${i}
+.lg-col-is-${i}
+
+// Adjustment Mixins
+@include is-offset($i);
+@include float(left || right);
+@include flush();
+
+// Adjustment Classes
+.is-offset-{$i}
+.col-is-left
+.col-is-right
+.col-is-flush
+      </code></pre>
+
+
+      <h3>Leads</h3>
+      <p>The idea of leads (/'lɛds'/, like the type of metal) is taken from the typgraphic layouts practiced in hot-metal typesetting. The lead is a strip of metal that is used to create white space between elements. Here, te leads are used to add margin above block elements in multples of the `baseline` variable to maintain consistentn vertical rhythym.</p>
+      <p>The integers 1-12 are available for classes.</p>
+      <pre><code>
+// Mixins
+@mixin lead-top();
+@mixin lead-bottom();
+
+// Classes
+.lead-${i}
+.lead-bottom-${i}
+      </code></pre>
+    </section>
+  </div>
+</div>
+
+<div class="flex-grid-sample" id="example">
+  <h1>Sample Zone</h1>
+</div>
